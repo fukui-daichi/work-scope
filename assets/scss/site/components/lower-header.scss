@@ -1,0 +1,46 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.lower-header {
+  padding-top: var(--header-height);
+  background: linear-gradient(10deg, var(--bg-color-dark) 50%, var(--bg-color-bright));
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+
+  > .inner {
+    margin-inline: auto;
+    width: var(--section-width);
+
+    hgroup {
+      padding-block: 10rem;
+
+      h1 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      > p {
+        font-size: 8rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+  .lower-header {
+    > .inner {
+      hgroup {
+        h2 {
+          font-size: 2.8rem;
+        }
+
+        > p {
+          font-size: 10rem;
+        }
+      }
+    }
+  }
+}

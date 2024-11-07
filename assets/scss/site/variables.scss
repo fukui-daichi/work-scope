@@ -1,0 +1,13 @@
+// コンテンツの基本サイズ
+// 各ブレイクポイントのmax-widthを定義
+$break-points: (
+  sp: 768,
+  pc: 1920,
+) !default;
+
+// rem変換時の基準のwidthを定義(デザインデータの横幅)
+$base-widths: (
+  sp: 768,
+  pc: 1920,
+  // nullにすると1rem:1pxで固定,
+) !default;

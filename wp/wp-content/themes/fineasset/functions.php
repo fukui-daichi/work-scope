@@ -1,0 +1,6 @@
+<?php
+require_once __DIR__ . "/inc/admin.php";
+require_once __DIR__ . "/inc/post-types.php";
+require_once __DIR__ . "/inc/reset-head.php";
+require_once __DIR__ . "/inc/utils.php";
+require_once __DIR__ . "/inc/plugins/contact-form7.php";

@@ -1,0 +1,35 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.not-found-page {
+  main {
+    > .content-wrapper {
+      margin-top: 6rem;
+      margin-inline: auto;
+      width: var(--section-width);
+
+      .message {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 1.8;
+      }
+
+      > a {
+        margin-top: 4rem;
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+  .not-found-page {
+    main {
+      > .content-wrapper {
+        .message {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}

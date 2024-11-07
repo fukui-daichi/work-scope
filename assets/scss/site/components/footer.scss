@@ -1,0 +1,84 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.site-footer {
+  position: sticky;
+  top: 100vh;
+  padding-block: 12rem;
+  background-color: var(--bg-color-bright);
+
+  > .inner {
+    margin-inline: auto;
+    width: var(--section-width);
+
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .logo {
+        display: block;
+        width: 24rem;
+      }
+
+      nav {
+        ul {
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+          column-gap: 10rem;
+          row-gap: 2rem;
+
+          li {
+            a {
+              position: relative;
+              display: block;
+              width: 100%;
+              font-size: 1.8rem;
+
+              @include modules.hover-underline(var(--primary-color));
+            }
+          }
+        }
+      }
+    }
+
+    .copy {
+      margin-top: 8rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+}
+
+@include f.mq(sp) {
+  .site-footer {
+    > .inner {
+      .content-wrapper {
+        flex-direction: column;
+        row-gap: 4rem;
+
+        .logo {
+          margin-inline: auto;
+          width: 30rem;
+        }
+
+        nav {
+          ul {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 4rem;
+            row-gap: 2rem;
+
+            li {
+              a {
+                font-size: 2.6rem;
+              }
+            }
+          }
+        }
+      }
+
+      .copy {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

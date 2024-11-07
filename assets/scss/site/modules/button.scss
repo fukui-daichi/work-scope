@@ -1,0 +1,68 @@
+@use "../../base/shortcut-functions" as f;
+@use "./hover" as hover;
+
+.mod-base-button {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 100vw;
+  padding: 1.6rem 3.6rem;
+  width: fit-content;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 2rem;
+    aspect-ratio: 23/13;
+    background-color: #fff;
+    mask: url(/assets/images/common/icon-arrow-right.svg) no-repeat center / contain;
+  }
+
+  @include hover.hover-opacity();
+
+  @include f.mq(sp) {
+    padding: 2rem 6rem;
+    font-size: 2.8rem;
+
+    &::after {
+      width: 4rem;
+    }
+  }
+}
+
+.mod-back-button {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 1rem;
+  border: 1px solid;
+  padding: 1.6rem 3.6rem;
+  width: fit-content;
+  background-color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    aspect-ratio: 1;
+    rotate: 180deg;
+    background-color: #000;
+    mask: url(/assets/images/common/icon-arrow-circle.svg) no-repeat center / contain;
+  }
+
+  @include f.mq(sp) {
+    padding: 2rem 6rem;
+    font-size: 2.8rem;
+
+    &::before {
+      width: 4rem;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@use "../base/shortcut-functions" as f;
+@use "./modules" as modules;
+
+:root {
+  --font-noto-sans: "Noto Sans JP", sans-serif;
+  --primary-color: #0080d9;
+  --secondary-color: #4166d2;
+  --accent-color: #fff2c5;
+  --bg-color-bright: #fff;
+  --bg-color-dark: #00233c;
+  --text-color: #fff;
+  --color-gray-200: #f0f0f0;
+  --color-gray-300: #cecece;
+  --color-gray-400: #999999;
+  --color-error: #ec0000;
+  --bg-color-error: #feeff0;
+  --color-success: #30ad34;
+  --bg-color-success: #e9fdee;
+  --leading-trim: calc((1em - 1lh) / 2);
+  --header-height: 10rem;
+  --section-width: 120rem;
+
+  @include f.mq(sp) {
+    --header-height: 12rem;
+    --section-width: 70rem;
+  }
+}
+
+html {
+  @include f.rem-base-font-size;
+  font-family: var(--font-noto-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color-dark);
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  // font-feature-settings: "palt";
+}
+
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+.pc {
+  @media (width <= 768px) {
+    display: none !important;
+  }
+}
+
+.sp {
+  @media (width > 768px) {
+    display: none !important;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a[href*="tel"] {
+  pointer-events: none;
+
+  @include f.mq(sp) {
+    pointer-events: revert;
+  }
+}

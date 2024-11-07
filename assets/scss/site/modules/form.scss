@@ -1,0 +1,40 @@
+@use "../../base/shortcut-functions" as f;
+@use "./hover" as hover;
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+textarea {
+  --padding-block: 1rem;
+  --padding-inline: 1.6rem;
+  border: 1px solid var(--gray);
+  border-radius: 1rem;
+  padding: var(--padding-block) var(--padding-inline);
+  width: 100%;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+textarea {
+  --min-rows: 8;
+  box-sizing: border-box;
+  width: 100%;
+  min-block-size: calc(var(--min-rows) * 1lh + var(--padding-block) * 2);
+  field-sizing: content;
+
+  @supports (field-sizing: content) {
+    resize: none;
+  }
+}
+
+@include f.mq(sp) {
+  input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+  textarea {
+    --padding-block: 1.4rem;
+    --padding-inline: 2rem;
+    font-size: 3.2rem;
+  }
+
+  textarea {
+    --min-rows: 10;
+  }
+}
