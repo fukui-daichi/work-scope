@@ -4,6 +4,8 @@ export default () => {
   if (isMobile()) {
     const nav = document.querySelector(".global-nav");
     const button = document.querySelector(".drawer-toggle-button");
+    if (!nav || !button) return;
+
     const links = [...nav.querySelectorAll("a")];
     const elements = [button, ...links];
 

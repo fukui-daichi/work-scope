@@ -7,8 +7,9 @@ $page_config = [
 ];
 
 Utils::get_component('head', $page_config);
-Utils::get_component('header');
+// Utils::get_component('header');
 ?>
+
 
 <main>
 </main>
