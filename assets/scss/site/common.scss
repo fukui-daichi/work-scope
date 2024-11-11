@@ -3,19 +3,19 @@
 
 :root {
   --font-noto-sans: "Noto Sans JP", sans-serif;
-  --primary-color: #0080d9;
-  --secondary-color: #4166d2;
-  --accent-color: #fff2c5;
-  --bg-color-bright: #fff;
-  --bg-color-dark: #00233c;
-  --text-color: #fff;
-  --color-gray-200: #f0f0f0;
-  --color-gray-300: #cecece;
-  --color-gray-400: #999999;
-  --color-error: #ec0000;
-  --bg-color-error: #feeff0;
-  --color-success: #30ad34;
-  --bg-color-success: #e9fdee;
+  --primary-color: #0553dd;
+  // --secondary-color: #4166d2;
+  // --accent-color: #fff2c5;
+  // --bg-color-bright: #fff;
+  // --bg-color-dark: #00233c;
+  // --text-color: #fff;
+  // --color-gray-200: #f0f0f0;
+  // --color-gray-300: #cecece;
+  // --color-gray-400: #999999;
+  // --color-error: #ec0000;
+  // --bg-color-error: #feeff0;
+  // --color-success: #30ad34;
+  // --bg-color-success: #e9fdee;
   --leading-trim: calc((1em - 1lh) / 2);
   --header-height: 10rem;
   --section-width: 120rem;
@@ -33,6 +33,10 @@ html {
 }
 
 body {
+  --clamp-viewport-min: 375;
+  --clamp-viewport-max: 1200;
+  --clamp-min: 14;
+  --clamp-max: 16;
   background-color: var(--bg-color-dark);
   overflow-x: clip;
   -webkit-text-size-adjust: 100%;

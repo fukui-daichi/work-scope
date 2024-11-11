@@ -1,4 +1,4 @@
-@mixin hover-underline($color: currentColor) {
+@mixin hover-underline($color: currentColor, $duration: 0.2s) {
   &::after {
     content: "";
     position: absolute;
@@ -7,7 +7,7 @@
     width: 0;
     height: 1px;
     background-color: $color;
-    transition: width 0.3s;
+    transition: width $duration ease;
   }
 
   &:hover {
@@ -19,7 +19,9 @@
   }
 }
 
-@mixin hover-bg-opacity($bg-color: currentColor, $opacity: 70%) {
+@mixin hover-bg-opacity($bg-color: currentColor, $opacity: 70%, $duration: 0.2s) {
+  transition: background-color $duration ease;
+
   &:hover {
     @media (any-hover: hover) {
       background-color: color-mix(in srgb, $bg-color $opacity, transparent);
@@ -27,7 +29,9 @@
   }
 }
 
-@mixin hover-opacity($opacity: 70%) {
+@mixin hover-opacity($opacity: 70%, $duration: 0.2s) {
+  transition: opacity $duration ease;
+
   &:hover {
     @media (any-hover: hover) {
       opacity: $opacity;
@@ -35,7 +39,9 @@
   }
 }
 
-@mixin hover-scale($scale: 1.2) {
+@mixin hover-scale($scale: 1.2, $duration: 0.2s) {
+  transition: scale $duration ease;
+
   &:hover {
     @media (any-hover: hover) {
       scale: $scale;

@@ -1,6 +1,6 @@
 <?php
 
-use Fineasset\Inc\Utils\Utils;
+use WorkScope\Inc\Utils\Utils;
 
 $page_config = [
   "class" => "not-found",

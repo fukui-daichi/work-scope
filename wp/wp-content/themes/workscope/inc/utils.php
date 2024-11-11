@@ -1,6 +1,6 @@
 <?php
 
-namespace Fineasset\Inc\Utils;
+namespace WorkScope\Inc\Utils;
 
 if (!defined("ABSPATH")) die();
 
@@ -69,7 +69,7 @@ class Utils
    * @param string $separator タイトルとサイト名の区切り文字
    * @return string 生成されたタイトル
    */
-  public static function get_page_title($title = null, string $siteName = '株式会社ファインアセット', string $separator = ' | '): string
+  public static function get_page_title($title = null, string $siteName = 'WorkScope', string $separator = ' | '): string
   {
     if (isset($title) && $title !== '' && $title !== null) {
       return $title . $separator . $siteName;

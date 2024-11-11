@@ -1,13 +1,13 @@
 <?php
 
-use Fineasset\Inc\Utils\Utils;
+use WorkScope\Inc\Utils\Utils;
 
 $page_config = [
   "class" => "front"
 ];
 
 Utils::get_component('head', $page_config);
-// Utils::get_component('header');
+Utils::get_component('header');
 ?>
 
 
