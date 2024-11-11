@@ -25,11 +25,17 @@ use WorkScope\Inc\Utils\Utils;
   <meta name="robots" content="noindex">
   <meta name="googlebot" content="noindex">
 
-  <?php
-  Utils::get_component('links');
-  Utils::get_component('scripts');
-  wp_head();
-  ?>
+  <!--=============== ▼CSS ===============-->
+  <link rel="stylesheet" href="/assets/css/styles.css?v=<?php echo filemtime(ABSPATH . "../assets/css/styles.css"); ?>">
+
+  <!--=============== ▼GOOGLE FONTS ===============-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+  <script type="module" src="/assets/js/app.js?v=<?php echo filemtime(ABSPATH . "../assets/js/app.js"); ?>" defer></script>
+
+  <?php wp_head(); ?>
 </head>
 
 <body<?= Utils::get_body_class($class); ?>>

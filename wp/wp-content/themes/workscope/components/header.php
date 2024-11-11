@@ -1,8 +1,9 @@
 <header class="site-header">
   <div class="inner">
-    <!-- <div class="content-wrapper"> -->
     <a href="/" class="logo">
-      <img src="/assets/images/common/logo.svg" alt="株式会社 ファインアセット" width="240" height="56" decoding="async">
+      <svg>
+        <use href="#site-logo" />
+      </svg>
     </a>
     <nav class="global-nav" aria-label="グローバルメニュー">
       <button type="button" class="drawer-toggle-button sp" aria-label="グローバルメニューを開閉する" aria-controls="global-nav" aria-haspopup="menu" aria-expanded="false">
@@ -11,7 +12,7 @@
         </span>
       </button>
       <div class="navlist-wrapper">
-        <ul>
+        <ul class="navlist">
           <li class="sp">
             <a href="/" class="logo">
               <img src="/assets/images/common/logo.svg" alt="株式会社 ファインアセット" width="240" height="56" decoding="async">
@@ -23,11 +24,10 @@
           <li><a href="/news">お知らせ</a></li>
           <li class="buttons">
             <a href="#" class="module-other-tab-button">採用情報</a>
-            <a href="/contact" class="mod-contact-button">お問い合わせ</a>
+            <a href="/contact" class="module-contact-button">お問い合わせ</a>
           </li>
         </ul>
       </div>
     </nav>
-    <!-- </div> -->
   </div>
 </header>
