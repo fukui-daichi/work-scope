@@ -69,27 +69,12 @@ class Utils
    * @param string $separator タイトルとサイト名の区切り文字
    * @return string 生成されたタイトル
    */
-  public static function get_page_title($title = null, string $siteName = 'WorkScope', string $separator = ' | '): string
+  public static function get_page_title($title = null, string $siteName = 'Work Scope', string $separator = ' | '): string
   {
     if (isset($title) && $title !== '' && $title !== null) {
       return $title . $separator . $siteName;
     }
     return $siteName;
-  }
-
-  /**
-   * ボディクラスを生成します。
-   *
-   * @param string|null $class 追加するクラス名（オプション）
-   * @param string $suffix クラス名に追加する接尾辞
-   * @return string 生成されたクラス属性文字列
-   */
-  public static function get_body_class($class = null, string $suffix = '-page'): string
-  {
-    if (!empty($class)) {
-      return ' class="' . esc_attr($class . $suffix) . '"';
-    }
-    return '';
   }
 
   /**

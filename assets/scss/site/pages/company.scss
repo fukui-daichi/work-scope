@@ -1,0 +1,8 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.company-page {
+}
+
+@include f.mq(sp) {
+}

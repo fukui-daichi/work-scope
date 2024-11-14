@@ -7,8 +7,8 @@
   > .inner {
     --image-block-width: 94svw;
     width: var(--image-block-width);
-    border-top-right-radius: calc(var(--image-block-width) / 10);
-    border-bottom-right-radius: calc(var(--image-block-width) / 10);
+    border-top-right-radius: calc(var(--image-block-width) / 16);
+    border-bottom-right-radius: calc(var(--image-block-width) / 16);
     overflow: clip;
 
     figure {
@@ -27,8 +27,8 @@
       margin-left: auto;
       border-top-right-radius: initial;
       border-bottom-right-radius: initial;
-      border-top-left-radius: calc(var(--image-block-width) / 10);
-      border-bottom-left-radius: calc(var(--image-block-width) / 10);
+      border-top-left-radius: calc(var(--image-block-width) / 16);
+      border-bottom-left-radius: calc(var(--image-block-width) / 16);
     }
   }
 }

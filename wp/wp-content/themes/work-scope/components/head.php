@@ -11,15 +11,15 @@ use WorkScope\Inc\Utils\Utils;
   <title><?= Utils::get_page_title($title ?? null); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="">
+  <meta name="description" content="Work Scopeは「●●●●●●●●」をビジョンに、組織・⼈事支援・採用支援・新規事業支援の事業を軸に幅広い事業を展開しています。">
 
   <!--=============== ▼DEFAULT OGP ===============-->
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="<?= Utils::get_og_type(); ?>">
-  <meta property="og:site_name" content="WorkScope">
-  <meta property="og:url" content="">
+  <meta property="og:site_name" content="Work Scope">
+  <meta property="og:url" content="<?= home_url(); ?>">
   <meta property="og:title" content="<?= Utils::get_page_title($title ?? null); ?>">
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Work Scopeは「●●●●●●●●」をビジョンに、組織・⼈事支援・採用支援・新規事業支援の事業を軸に幅広い事業を展開しています。">
   <meta property="og:image" content="<?= home_url(); ?>/assets/images/common/ogp.jpg">
 
   <meta name="robots" content="noindex">
@@ -38,4 +38,4 @@ use WorkScope\Inc\Utils\Utils;
   <?php wp_head(); ?>
 </head>
 
-<body<?= Utils::get_body_class($class); ?>>
+<body>

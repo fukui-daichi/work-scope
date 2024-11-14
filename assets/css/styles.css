@@ -895,8 +895,8 @@ textarea {
 .module-image-block > .inner {
   --image-block-width: 94svw;
   width: var(--image-block-width);
-  border-top-right-radius: calc(var(--image-block-width) / 10);
-  border-bottom-right-radius: calc(var(--image-block-width) / 10);
+  border-top-right-radius: calc(var(--image-block-width) / 16);
+  border-bottom-right-radius: calc(var(--image-block-width) / 16);
   overflow: clip;
 }
 .module-image-block > .inner figure {
@@ -912,8 +912,8 @@ textarea {
   margin-left: auto;
   border-top-right-radius: initial;
   border-bottom-right-radius: initial;
-  border-top-left-radius: calc(var(--image-block-width) / 10);
-  border-bottom-left-radius: calc(var(--image-block-width) / 10);
+  border-top-left-radius: calc(var(--image-block-width) / 16);
+  border-bottom-left-radius: calc(var(--image-block-width) / 16);
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
@@ -1017,49 +1017,49 @@ a[href*=tel] {
   }
 }
 
-.front-page main .mv > .inner hgroup {
+.front-page .mv > .inner hgroup {
   margin-block: calc(var(--header-height) + 10rem) 10rem;
   margin-inline: auto;
   width: min(100% - var(--content-padding-inline), var(--content-width));
 }
-.front-page main .mv > .inner hgroup h1 {
+.front-page .mv > .inner hgroup h1 {
   font-size: 5.2rem;
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: 0.12em;
 }
-.front-page main .mv > .inner hgroup > p {
+.front-page .mv > .inner hgroup > p {
   margin-top: 2rem;
   color: var(--color-primary);
   font-size: 2.2rem;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
-.front-page main .mv > .inner .splide {
+.front-page .mv > .inner .splide {
   --image-block-width: 94svw;
   width: var(--image-block-width);
-  border-top-right-radius: calc(var(--image-block-width) / 10);
-  border-bottom-right-radius: calc(var(--image-block-width) / 10);
+  border-top-right-radius: calc(var(--image-block-width) / 16);
+  border-bottom-right-radius: calc(var(--image-block-width) / 16);
   overflow: clip;
 }
-.front-page main .mv > .inner .splide__slide {
+.front-page .mv > .inner .splide__slide {
   aspect-ratio: 2/1;
 }
-.front-page main .mv > .inner .splide__slide img {
+.front-page .mv > .inner .splide__slide img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.front-page main section {
+.front-page section {
   position: relative;
   padding-block: var(--padding-top, 16rem) var(--padding-bottom, 16rem);
 }
-.front-page main section > .inner {
+.front-page section > .inner {
   margin-inline: auto;
   width: min(100% - var(--content-padding-inline), var(--content-width));
 }
-.front-page main section > .inner .intro h2 {
+.front-page section > .inner .intro h2 {
   width: -moz-fit-content;
   width: fit-content;
   color: var(--color-primary);
@@ -1067,7 +1067,7 @@ a[href*=tel] {
   font-weight: 600;
   letter-spacing: 0.06em;
 }
-.front-page main section > .inner .intro h2::after {
+.front-page section > .inner .intro h2::after {
   content: "";
   display: block;
   margin-top: 2rem;
@@ -1075,96 +1075,96 @@ a[href*=tel] {
   height: 0.2rem;
   background-color: color-mix(in srgb, currentColor 50%, transparent);
 }
-.front-page main section > .inner .intro dl {
+.front-page section > .inner .intro dl {
   margin-top: 4rem;
 }
-.front-page main section > .inner .intro dl dt {
+.front-page section > .inner .intro dl dt {
   font-size: 3.6rem;
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: 0.04em;
 }
-.front-page main section > .inner .intro dl dd {
+.front-page section > .inner .intro dl dd {
   margin-top: 1.6rem;
   font-size: 2rem;
   line-height: 1.8;
 }
-.front-page main section.company > .inner {
+.front-page section.company > .inner {
   display: grid;
   grid-template-columns: 1fr 48rem;
   gap: 8rem;
 }
-.front-page main section.company > .inner .intro .module-base-button {
+.front-page section.company > .inner .intro .module-base-button {
   margin-top: 4rem;
 }
-.front-page main section.company > .inner figure {
+.front-page section.company > .inner figure {
   overflow: clip;
   border-radius: 2rem;
   aspect-ratio: 5/6;
 }
-.front-page main section.company > .inner figure img {
+.front-page section.company > .inner figure img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.front-page main section.service {
+.front-page section.service {
   background-color: #fff;
   border-top-right-radius: 10svw;
 }
-.front-page main section.service > .inner .service-list {
+.front-page section.service > .inner .service-list {
   margin-top: 6rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
 }
-.front-page main section.service > .inner .service-list li figure {
+.front-page section.service > .inner .service-list li figure {
   overflow: clip;
   border-radius: 2rem;
   aspect-ratio: 3/2;
 }
-.front-page main section.service > .inner .service-list li figure img {
+.front-page section.service > .inner .service-list li figure img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.front-page main section.service > .inner .service-list li dl {
+.front-page section.service > .inner .service-list li dl {
   margin-top: 1.6rem;
 }
-.front-page main section.service > .inner .service-list li dl dt span {
+.front-page section.service > .inner .service-list li dl dt span {
   display: block;
 }
-.front-page main section.service > .inner .service-list li dl dt span.en {
+.front-page section.service > .inner .service-list li dl dt span.en {
   color: var(--color-primary);
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 0.06em;
 }
-.front-page main section.service > .inner .service-list li dl dt span.ja {
+.front-page section.service > .inner .service-list li dl dt span.ja {
   margin-top: 0.8rem;
   font-size: 2.2rem;
 }
-.front-page main section.service > .inner .service-list li dl dd {
+.front-page section.service > .inner .service-list li dl dd {
   margin-top: 1.2rem;
   font-size: 1.8rem;
   line-height: 1.6;
 }
-.front-page main section.service > .inner .module-base-button {
+.front-page section.service > .inner .module-base-button {
   margin-top: 4rem;
   margin-inline: auto 0;
 }
-.front-page main section.case > .inner .case-list {
+.front-page section.case > .inner .case-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
   margin-top: 6rem;
 }
-.front-page main section.case > .inner .case-list > li {
+.front-page section.case > .inner .case-list > li {
   display: grid;
   grid-template-rows: auto 1fr;
 }
-.front-page main section.case > .inner .case-list > li a {
+.front-page section.case > .inner .case-list > li a {
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 2;
@@ -1173,19 +1173,19 @@ a[href*=tel] {
   padding: 2.6rem;
   background-color: #fff;
 }
-.front-page main section.case > .inner .case-list > li a figure {
+.front-page section.case > .inner .case-list > li a figure {
   overflow: clip;
   border-radius: 2rem;
   aspect-ratio: 3/2;
 }
-.front-page main section.case > .inner .case-list > li a figure img {
+.front-page section.case > .inner .case-list > li a figure img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: scale 0.3s;
 }
-.front-page main section.case > .inner .case-list > li a dl dt {
+.front-page section.case > .inner .case-list > li a dl dt {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -1193,7 +1193,7 @@ a[href*=tel] {
   font-size: 1.6rem;
   line-height: 1.6;
 }
-.front-page main section.case > .inner .case-list > li a dl dt .tag {
+.front-page section.case > .inner .case-list > li a dl dt .tag {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
@@ -1204,10 +1204,10 @@ a[href*=tel] {
   color: #fff;
   font-weight: 400;
 }
-.front-page main section.case > .inner .case-list > li a dl dt time {
+.front-page section.case > .inner .case-list > li a dl dt time {
   font-weight: 600;
 }
-.front-page main section.case > .inner .case-list > li a dl dd {
+.front-page section.case > .inner .case-list > li a dl dd {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -1218,32 +1218,33 @@ a[href*=tel] {
   line-height: 1.6;
 }
 @media (any-hover: hover) {
-  .front-page main section.case > .inner .case-list > li a:hover figure img {
+  .front-page section.case > .inner .case-list > li a:hover figure img {
     scale: 1.2;
   }
 }
-.front-page main section.case > .inner .module-base-button {
+.front-page section.case > .inner .module-base-button {
   margin-top: 4rem;
   margin-inline: auto 0;
 }
-.front-page main section.news {
+.front-page section.news {
   background-color: #fff;
   border-top-left-radius: 10svw;
 }
-.front-page main section.news > .inner .content-wrapper {
+.front-page section.news > .inner .content-wrapper {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 24rem;
 }
-.front-page main section.news > .inner .content-wrapper .news-list li + li {
+.front-page section.news > .inner .content-wrapper .news-list li + li {
   margin-top: 4rem;
 }
-.front-page main section.news > .inner .content-wrapper .news-list li a {
+.front-page section.news > .inner .content-wrapper .news-list li a {
   display: block;
   padding-bottom: 2.4rem;
   border-bottom: 1px solid var(--color-gray);
+  transition: opacity 0.2s ease;
 }
-.front-page main section.news > .inner .content-wrapper .news-list li a dl dt {
+.front-page section.news > .inner .content-wrapper .news-list li a dl dt {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -1251,7 +1252,7 @@ a[href*=tel] {
   font-size: 1.6rem;
   line-height: 1.6;
 }
-.front-page main section.news > .inner .content-wrapper .news-list li a dl dt .tag {
+.front-page section.news > .inner .content-wrapper .news-list li a dl dt .tag {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
@@ -1262,10 +1263,10 @@ a[href*=tel] {
   color: #fff;
   font-weight: 400;
 }
-.front-page main section.news > .inner .content-wrapper .news-list li a dl dt time {
+.front-page section.news > .inner .content-wrapper .news-list li a dl dt time {
   font-weight: 600;
 }
-.front-page main section.news > .inner .content-wrapper .news-list li a dl dd {
+.front-page section.news > .inner .content-wrapper .news-list li a dl dd {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -1275,14 +1276,19 @@ a[href*=tel] {
   font-weight: 600;
   line-height: 1.6;
 }
-.front-page main section.news > .inner .module-base-button {
+@media (any-hover: hover) {
+  .front-page section.news > .inner .content-wrapper .news-list li a:hover {
+    opacity: 70%;
+  }
+}
+.front-page section.news > .inner .module-base-button {
   margin-top: 4rem;
   margin-inline: auto 0;
 }
-.front-page main section.career {
+.front-page section.career {
   --padding-bottom: 24rem;
 }
-.front-page main section.career::before {
+.front-page section.career::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1291,7 +1297,7 @@ a[href*=tel] {
   height: 100%;
   background-color: #fff;
 }
-.front-page main section.career::after {
+.front-page section.career::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1302,105 +1308,105 @@ a[href*=tel] {
   background: url(/assets/images/front/career/bg.jpg) no-repeat center/cover;
   filter: brightness(0.6);
 }
-.front-page main section.career > .inner .intro h2 {
+.front-page section.career > .inner .intro h2 {
   color: #fff;
 }
-.front-page main section.career > .inner .intro dl {
+.front-page section.career > .inner .intro dl {
   color: #fff;
 }
-.front-page main section.career > .inner .module-base-button {
+.front-page section.career > .inner .module-base-button {
   margin-top: 4rem;
 }
-.front-page main section.career > .inner .module-base-button .text {
+.front-page section.career > .inner .module-base-button .text {
   color: #fff;
 }
-.front-page main .module-image-block {
+.front-page .module-image-block {
   background: linear-gradient(to bottom, #fff 50%, var(--color-bg) 50%);
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .front-page main .mv > .inner hgroup h1 {
+  .front-page .mv > .inner hgroup h1 {
     font-size: 6rem;
   }
-  .front-page main .mv > .inner hgroup > p {
+  .front-page .mv > .inner hgroup > p {
     font-size: 2.6rem;
   }
-  .front-page main .mv > .inner .splide {
+  .front-page .mv > .inner .splide {
     border-top-right-radius: calc(var(--image-block-width) / 5);
     border-bottom-right-radius: calc(var(--image-block-width) / 5);
   }
-  .front-page main .mv > .inner .splide__slide {
+  .front-page .mv > .inner .splide__slide {
     aspect-ratio: 1;
   }
-  .front-page main section > .inner .intro h2 {
+  .front-page section > .inner .intro h2 {
     font-size: 6.4rem;
   }
-  .front-page main section > .inner .intro h2::after {
+  .front-page section > .inner .intro h2::after {
     margin-top: 2.8rem;
     width: 10rem;
     height: 0.4rem;
   }
-  .front-page main section > .inner .intro dl {
+  .front-page section > .inner .intro dl {
     margin-top: 5.4rem;
   }
-  .front-page main section > .inner .intro dl dt {
+  .front-page section > .inner .intro dl dt {
     font-size: 5.2rem;
   }
-  .front-page main section > .inner .intro dl dd {
+  .front-page section > .inner .intro dl dd {
     margin-top: 2rem;
     font-size: 3.2rem;
   }
-  .front-page main section.company > .inner {
+  .front-page section.company > .inner {
     grid-template-columns: revert;
     gap: 4rem;
   }
-  .front-page main section.company > .inner figure {
+  .front-page section.company > .inner figure {
     aspect-ratio: 4/3;
   }
-  .front-page main section.service > .inner .service-list {
+  .front-page section.service > .inner .service-list {
     grid-template-columns: revert;
     gap: 6rem;
   }
-  .front-page main section.service > .inner .service-list li dl {
+  .front-page section.service > .inner .service-list li dl {
     margin-top: 2.4rem;
   }
-  .front-page main section.service > .inner .service-list li dl dt span.en {
+  .front-page section.service > .inner .service-list li dl dt span.en {
     font-size: 2.8rem;
   }
-  .front-page main section.service > .inner .service-list li dl dt span.ja {
+  .front-page section.service > .inner .service-list li dl dt span.ja {
     margin-top: 1.2rem;
     font-size: 4.4rem;
   }
-  .front-page main section.service > .inner .service-list li dl dd {
+  .front-page section.service > .inner .service-list li dl dd {
     margin-top: 1.6rem;
     font-size: 3.2rem;
   }
-  .front-page main section.case > .inner .case-list {
+  .front-page section.case > .inner .case-list {
     grid-template-columns: revert;
     gap: 6rem;
   }
-  .front-page main section.case > .inner .case-list > li a {
+  .front-page section.case > .inner .case-list > li a {
     gap: 2rem;
     padding: 4rem;
   }
-  .front-page main section.case > .inner .case-list > li a dl dt {
+  .front-page section.case > .inner .case-list > li a dl dt {
     gap: 1.6rem;
     font-size: 2.4rem;
   }
-  .front-page main section.case > .inner .case-list > li a dl dd {
+  .front-page section.case > .inner .case-list > li a dl dd {
     font-size: 3.2rem;
   }
-  .front-page main section.news > .inner .content-wrapper {
+  .front-page section.news > .inner .content-wrapper {
     grid-template-columns: revert;
     gap: 6rem;
   }
-  .front-page main section.news > .inner .content-wrapper .news-list li a {
+  .front-page section.news > .inner .content-wrapper .news-list li a {
     padding-bottom: 3.2rem;
   }
-  .front-page main section.news > .inner .content-wrapper .news-list li a dl dt {
+  .front-page section.news > .inner .content-wrapper .news-list li a dl dt {
     font-size: 2.4rem;
   }
-  .front-page main section.news > .inner .content-wrapper .news-list li a dl dd {
+  .front-page section.news > .inner .content-wrapper .news-list li a dl dd {
     margin-top: 1.6rem;
     font-size: 3.2rem;
   }
@@ -1469,7 +1475,7 @@ a[href*=tel] {
   display: flex;
   gap: 2rem;
 }
-.site-header > .inner .global-nav .navlist li > a:not([class]) {
+.site-header > .inner .global-nav .navlist li > a:not([class*=module-]) {
   position: relative;
   display: block;
   font-size: 2.2rem;
@@ -1477,7 +1483,7 @@ a[href*=tel] {
   transition: opacity 0.2s ease;
 }
 @media (any-hover: hover) {
-  .site-header > .inner .global-nav .navlist li > a:not([class]):hover {
+  .site-header > .inner .global-nav .navlist li > a:not([class*=module-]):hover {
     opacity: 70%;
   }
 }
@@ -1752,6 +1758,33 @@ a[href*=tel] {
   }
   .contact-induction > .inner .contact-induction-list li:last-of-type {
     padding-bottom: initial;
+  }
+}
+.lower-header {
+  padding-top: 6rem;
+}
+.lower-header > .inner {
+  margin-inline: auto;
+  width: min(100% - var(--content-padding-inline), var(--content-width));
+}
+.lower-header > .inner hgroup h1 {
+  color: var(--color-primary);
+  font-size: 6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.lower-header > .inner hgroup > p {
+  margin-top: 1.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .lower-header > .inner hgroup h1 {
+    font-size: 7.2rem;
+  }
+  .lower-header > .inner hgroup > p {
+    font-size: 3.2rem;
   }
 }
 

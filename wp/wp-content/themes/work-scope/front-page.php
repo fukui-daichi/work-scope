@@ -2,16 +2,12 @@
 
 use WorkScope\Inc\Utils\Utils;
 
-$page_config = [
-  "class" => "front"
-];
-
-Utils::get_component('head', $page_config);
+Utils::get_component('head');
 Utils::get_component('header');
 ?>
 
 
-<main>
+<main class="front-page" data-hx-target>
   <div class="mv">
     <div class="inner">
       <hgroup>
@@ -32,8 +28,8 @@ Utils::get_component('header');
             </li>
             <li class="splide__slide">
               <picture>
-                <source srcset="/assets/images/front/mv/sp/slide01.jpg" media="(max-width: 768px)" />
-                <img src="/assets/images/front/mv/slide01.jpg" alt="" width="1080" height="720" decoding="async">
+                <!-- <source srcset="/assets/images/front/mv/sp/slide01.jpg" media="(max-width: 768px)" /> -->
+                <img src="/assets/images/front/mv/slide02.jpg" alt="" width="1920" height="1080" decoding="async">
               </picture>
             </li>
           </ul>
@@ -281,9 +277,9 @@ Utils::get_component('header');
       </a>
     </div>
   </section>
-
-  <?php Utils::get_component('contact-induction'); ?>
-
 </main>
 
-<?php Utils::get_component('footer'); ?>
+<?php
+Utils::get_component('contact-induction');
+Utils::get_component('footer');
+?>
