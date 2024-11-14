@@ -1,0 +1,95 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.contact-induction {
+  padding-block: 14rem;
+  background-color: var(--color-primary);
+  color: #fff;
+
+  > .inner {
+    margin-inline: auto;
+    width: min(calc(100% - var(--content-padding-inline)), var(--content-width));
+
+    .contact-induction-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      li {
+        --padding-space: 6rem;
+
+        dl {
+          dt {
+            font-size: 2.4rem;
+          }
+
+          dd {
+            margin-top: 2rem;
+            font-size: 1.8rem;
+            line-height: 1.6;
+          }
+        }
+
+        .module-base-button {
+          margin-top: 4rem;
+
+          .icon {
+            background-color: #fff;
+            color: var(--color-primary);
+          }
+        }
+
+        &:nth-of-type(odd) {
+          padding-right: var(--padding-space);
+        }
+
+        &:nth-of-type(even) {
+          border-left: 1px solid currentColor;
+          padding-left: var(--padding-space);
+        }
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+  .contact-induction {
+    > .inner {
+      .contact-induction-list {
+        grid-template-columns: revert;
+
+        li {
+          --padding-space: 6rem;
+          padding-bottom: var(--padding-space);
+
+          & + li {
+            border-top: 1px solid currentColor;
+            padding-top: var(--padding-space);
+          }
+
+          dl {
+            dt {
+              font-size: 4rem;
+            }
+
+            dd {
+              font-size: 3.2rem;
+            }
+          }
+
+          &:nth-of-type(odd) {
+            padding-right: initial;
+          }
+
+          &:nth-of-type(even) {
+            border-left: initial;
+            padding-left: initial;
+          }
+
+          &:last-of-type {
+            padding-bottom: initial;
+          }
+        }
+      }
+    }
+  }
+}

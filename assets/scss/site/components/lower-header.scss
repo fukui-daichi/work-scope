@@ -3,12 +3,12 @@
 
 .lower-header {
   padding-top: var(--header-height);
-  background: linear-gradient(10deg, var(--bg-color-dark) 50%, var(--bg-color-bright));
+  background: linear-gradient(10deg, var(--color-bg-dark) 50%, var(--color-bg-bright));
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
 
   > .inner {
     margin-inline: auto;
-    width: var(--section-width);
+    width: var(--content-width);
 
     hgroup {
       padding-block: 10rem;
@@ -16,7 +16,7 @@
       h1 {
         font-size: 2.4rem;
         font-weight: 600;
-        color: var(--primary-color);
+        color: var(--color-primary);
       }
 
       > p {

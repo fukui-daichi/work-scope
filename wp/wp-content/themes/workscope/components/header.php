@@ -15,12 +15,14 @@
         <ul class="navlist">
           <li class="sp">
             <a href="/" class="logo">
-              <img src="/assets/images/common/logo.svg" alt="株式会社 ファインアセット" width="240" height="56" decoding="async">
+              <svg>
+                <use href="#site-logo" />
+              </svg>
             </a>
           </li>
-          <li><a href="/about">企業情報</a></li>
+          <li><a href="/company">企業情報</a></li>
           <li><a href="/service">事業内容</a></li>
-          <li><a href="/company">実績紹介</a></li>
+          <li><a href="/case">実績紹介</a></li>
           <li><a href="/news">お知らせ</a></li>
           <li class="buttons">
             <a href="#" class="module-other-tab-button">採用情報</a>

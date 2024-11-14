@@ -3,26 +3,30 @@
 
 :root {
   --font-noto-sans: "Noto Sans JP", sans-serif;
-  --primary-color: #0553dd;
+  --color-primary: #0553dd;
+  --color-bg: #f6f6f6;
+  --color-gray: #c2c2c2;
   // --secondary-color: #4166d2;
   // --accent-color: #fff2c5;
-  // --bg-color-bright: #fff;
-  // --bg-color-dark: #00233c;
+  // --color-bg-bright: #fff;
+  // --color-bg-dark: #00233c;
   // --text-color: #fff;
   // --color-gray-200: #f0f0f0;
   // --color-gray-300: #cecece;
   // --color-gray-400: #999999;
   // --color-error: #ec0000;
-  // --bg-color-error: #feeff0;
+  // --color-bg-error: #feeff0;
   // --color-success: #30ad34;
-  // --bg-color-success: #e9fdee;
+  // --color-bg-success: #e9fdee;
   --leading-trim: calc((1em - 1lh) / 2);
   --header-height: 10rem;
-  --section-width: 120rem;
+  --content-padding-inline: 4rem;
+  --content-width: 120rem;
+  --image-block-width: 94svw;
 
   @include f.mq(sp) {
     --header-height: 12rem;
-    --section-width: 70rem;
+    --content-width: 64rem;
   }
 }
 
@@ -37,7 +41,7 @@ body {
   --clamp-viewport-max: 1200;
   --clamp-min: 14;
   --clamp-max: 16;
-  background-color: var(--bg-color-dark);
+  background-color: var(--color-bg);
   overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;

@@ -24,9 +24,9 @@ use WorkScope\Inc\Utils\Utils;
       <div class="right">
         <nav>
           <ul class="navlist">
-            <li><a href="/about">企業情報</a></li>
+            <li><a href="/company">企業情報</a></li>
             <li><a href="/service">事業内容</a></li>
-            <li><a href="/company">実績紹介</a></li>
+            <li><a href="/case">実績紹介</a></li>
             <li><a href="/news">お知らせ</a></li>
             <li><a href="#" class="other-tab">採用情報</a></li>
             <li><a href="/contact">お問い合わせ</a></li>
