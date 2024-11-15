@@ -932,6 +932,63 @@ textarea {
     border-bottom-left-radius: calc(var(--image-block-width) / 5);
   }
 }
+.module-text-h2 {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--color-primary);
+  font-size: 4.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.module-text-h2::after {
+  content: "";
+  display: block;
+  margin-top: 2rem;
+  width: 8rem;
+  height: 0.2rem;
+  background-color: color-mix(in srgb, currentColor 50%, transparent);
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .module-text-h2 {
+    font-size: 6.4rem;
+  }
+  .module-text-h2::after {
+    margin-top: 2.8rem;
+    width: 10rem;
+    height: 0.4rem;
+  }
+}
+
+.module-text-intro {
+  margin-top: 4rem;
+}
+.module-text-intro dt {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+.module-text-intro dd {
+  margin-top: 1.6rem;
+  font-size: 2rem;
+  line-height: 1.8;
+}
+.module-text-intro dd > p + p {
+  margin-top: 2rem;
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .module-text-intro {
+    margin-top: 5.4rem;
+  }
+  .module-text-intro dt {
+    font-size: 5.2rem;
+  }
+  .module-text-intro dd {
+    margin-top: 2rem;
+    font-size: 3.2rem;
+  }
+}
+
 :root {
   --font-noto-sans: "Noto Sans JP", sans-serif;
   --color-primary: #0553dd;
@@ -953,7 +1010,6 @@ textarea {
 html {
   font-size: 62.5%;
   font-family: var(--font-noto-sans);
-  scroll-behavior: smooth;
 }
 @media (max-width: 768px) {
   html {
@@ -1017,6 +1073,20 @@ a[href*=tel] {
   }
 }
 
+section {
+  position: relative;
+  padding-block: var(--padding-top, 16rem) var(--padding-bottom, 16rem);
+}
+section > .inner {
+  margin-inline: auto;
+  width: min(100% - var(--content-padding-inline), var(--content-width));
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  section {
+    pointer-events: revert;
+  }
+}
+
 .front-page .mv > .inner hgroup {
   margin-block: calc(var(--header-height) + 10rem) 10rem;
   margin-inline: auto;
@@ -1050,44 +1120,6 @@ a[href*=tel] {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.front-page section {
-  position: relative;
-  padding-block: var(--padding-top, 16rem) var(--padding-bottom, 16rem);
-}
-.front-page section > .inner {
-  margin-inline: auto;
-  width: min(100% - var(--content-padding-inline), var(--content-width));
-}
-.front-page section > .inner .intro h2 {
-  width: -moz-fit-content;
-  width: fit-content;
-  color: var(--color-primary);
-  font-size: 4.6rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-}
-.front-page section > .inner .intro h2::after {
-  content: "";
-  display: block;
-  margin-top: 2rem;
-  width: 8rem;
-  height: 0.2rem;
-  background-color: color-mix(in srgb, currentColor 50%, transparent);
-}
-.front-page section > .inner .intro dl {
-  margin-top: 4rem;
-}
-.front-page section > .inner .intro dl dt {
-  font-size: 3.6rem;
-  font-weight: 600;
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-}
-.front-page section > .inner .intro dl dd {
-  margin-top: 1.6rem;
-  font-size: 2rem;
-  line-height: 1.8;
 }
 .front-page section.company > .inner {
   display: grid;
@@ -1338,24 +1370,6 @@ a[href*=tel] {
   .front-page .mv > .inner .splide__slide {
     aspect-ratio: 1;
   }
-  .front-page section > .inner .intro h2 {
-    font-size: 6.4rem;
-  }
-  .front-page section > .inner .intro h2::after {
-    margin-top: 2.8rem;
-    width: 10rem;
-    height: 0.4rem;
-  }
-  .front-page section > .inner .intro dl {
-    margin-top: 5.4rem;
-  }
-  .front-page section > .inner .intro dl dt {
-    font-size: 5.2rem;
-  }
-  .front-page section > .inner .intro dl dd {
-    margin-top: 2rem;
-    font-size: 3.2rem;
-  }
   .front-page section.company > .inner {
     grid-template-columns: revert;
     gap: 4rem;
@@ -1408,6 +1422,114 @@ a[href*=tel] {
   }
   .front-page section.news > .inner .content-wrapper .news-list li a dl dd {
     margin-top: 1.6rem;
+    font-size: 3.2rem;
+  }
+}
+.company-page section.message {
+  background-color: #fff;
+  border-top-right-radius: 10svw;
+  border-bottom-right-radius: 10svw;
+}
+.company-page section.message > .inner {
+  display: grid;
+  grid-template-columns: 1fr 40rem;
+  gap: 6rem;
+}
+.company-page section.message > .inner figure {
+  overflow: clip;
+  border-radius: 2rem;
+  aspect-ratio: 2/3;
+}
+.company-page section.message > .inner figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.company-page section.our-value > .inner {
+  display: grid;
+  grid-template-columns: 1fr 80rem;
+  gap: 6rem;
+}
+.company-page section.our-value > .inner .our-value-list li {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+.company-page section.our-value > .inner .our-value-list li + li {
+  margin-top: 4rem;
+}
+.company-page section.our-value > .inner .our-value-list li .icon {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 2rem;
+  background-color: #fff;
+}
+.company-page section.our-value > .inner .our-value-list li .icon figure {
+  width: 36%;
+}
+.company-page section.our-value > .inner .our-value-list li dl dt {
+  font-size: 2.4rem;
+}
+.company-page section.our-value > .inner .our-value-list li dl dd {
+  margin-top: 1.2rem;
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+.company-page section.company-profile {
+  background-color: #fff;
+}
+.company-page section.company-profile > .inner .detail-list {
+  margin-top: 6rem;
+}
+.company-page section.company-profile > .inner .detail-list li dl {
+  display: grid;
+  grid-template-columns: minmax(auto, 24rem) 1fr;
+  gap: 4rem;
+  padding-block: 2.6rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-gray) 60%, transparent);
+  font-size: 2rem;
+  line-height: 1.6;
+}
+.company-page .module-image-block {
+  background: linear-gradient(to bottom, var(--color-bg) 50%, #fff 50%);
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .company-page section.message > .inner {
+    grid-template-columns: revert;
+  }
+  .company-page section.message > .inner figure {
+    aspect-ratio: 5/4;
+  }
+  .company-page section.our-value > .inner {
+    grid-template-columns: revert;
+  }
+  .company-page section.our-value > .inner .our-value-list li {
+    grid-template-columns: revert;
+  }
+  .company-page section.our-value > .inner .our-value-list li + li {
+    margin-top: 6rem;
+  }
+  .company-page section.our-value > .inner .our-value-list li .icon {
+    justify-self: center;
+    width: 40%;
+  }
+  .company-page section.our-value > .inner .our-value-list li dl dt {
+    text-align: center;
+    font-size: 4rem;
+  }
+  .company-page section.our-value > .inner .our-value-list li dl dd {
+    margin-top: 2.4rem;
+    font-size: 3.2rem;
+  }
+  .company-page section.company-profile > .inner .detail-list li dl {
+    grid-template-columns: revert;
+    gap: 0;
+    padding-block: 4rem;
     font-size: 3.2rem;
   }
 }

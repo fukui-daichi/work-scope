@@ -2,7 +2,165 @@
 @use "../modules" as modules;
 
 .company-page {
+  section {
+    &.message {
+      background-color: #fff;
+      border-top-right-radius: 10svw;
+      border-bottom-right-radius: 10svw;
+
+      > .inner {
+        display: grid;
+        grid-template-columns: 1fr 40rem;
+        gap: 6rem;
+
+        figure {
+          overflow: clip;
+          border-radius: 2rem;
+          aspect-ratio: 2/3;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    &.our-value {
+      > .inner {
+        display: grid;
+        grid-template-columns: 1fr 80rem;
+        gap: 6rem;
+
+        .our-value-list {
+          li {
+            display: grid;
+            grid-template-columns: 14rem 1fr;
+            align-items: center;
+            gap: 4rem;
+
+            & + li {
+              margin-top: 4rem;
+            }
+
+            .icon {
+              display: grid;
+              place-items: center;
+              width: 100%;
+              aspect-ratio: 1;
+              border-radius: 2rem;
+              background-color: #fff;
+
+              figure {
+                width: 36%;
+              }
+            }
+
+            dl {
+              dt {
+                font-size: 2.4rem;
+              }
+
+              dd {
+                margin-top: 1.2rem;
+                font-size: 1.8rem;
+                line-height: 1.6;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.company-profile {
+      background-color: #fff;
+
+      > .inner {
+        .detail-list {
+          margin-top: 6rem;
+
+          li {
+            dl {
+              display: grid;
+              grid-template-columns: minmax(auto, 24rem) 1fr;
+              gap: 4rem;
+              padding-block: 2.6rem;
+              border-bottom: 1px solid color-mix(in srgb, var(--color-gray) 60%, transparent);
+              font-size: 2rem;
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .module-image-block {
+    background: linear-gradient(to bottom, var(--color-bg) 50%, #fff 50%);
+  }
 }
 
 @include f.mq(sp) {
+  .company-page {
+    section {
+      &.message {
+        > .inner {
+          grid-template-columns: revert;
+
+          figure {
+            aspect-ratio: 5/4;
+          }
+        }
+      }
+
+      &.our-value {
+        > .inner {
+          grid-template-columns: revert;
+
+          .our-value-list {
+            li {
+              grid-template-columns: revert;
+
+              & + li {
+                margin-top: 6rem;
+              }
+
+              .icon {
+                justify-self: center;
+                width: 40%;
+              }
+
+              dl {
+                dt {
+                  text-align: center;
+                  font-size: 4rem;
+                }
+
+                dd {
+                  margin-top: 2.4rem;
+                  font-size: 3.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.company-profile {
+        > .inner {
+          .detail-list {
+            li {
+              dl {
+                grid-template-columns: revert;
+                gap: 0;
+                padding-block: 4rem;
+                font-size: 3.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

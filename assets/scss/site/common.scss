@@ -33,7 +33,7 @@
 html {
   @include f.rem-base-font-size;
   font-family: var(--font-noto-sans);
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 body {
@@ -81,6 +81,20 @@ img {
 
 a[href*="tel"] {
   pointer-events: none;
+
+  @include f.mq(sp) {
+    pointer-events: revert;
+  }
+}
+
+section {
+  position: relative;
+  padding-block: var(--padding-top, 16rem) var(--padding-bottom, 16rem);
+
+  > .inner {
+    margin-inline: auto;
+    width: min(calc(100% - var(--content-padding-inline)), var(--content-width));
+  }
 
   @include f.mq(sp) {
     pointer-events: revert;

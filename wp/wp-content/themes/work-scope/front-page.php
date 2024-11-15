@@ -41,8 +41,8 @@ Utils::get_component('header');
   <section class="company">
     <div class="inner">
       <div class="intro">
-        <h2>COMPANY</h2>
-        <dl>
+        <h2 class="module-text-h2">COMPANY</h2>
+        <dl class="module-text-intro">
           <dt>
             すべてのクライアントに<br>
             課題解決策と成長を
@@ -66,8 +66,8 @@ Utils::get_component('header');
   <section class="service">
     <div class="inner">
       <div class="intro">
-        <h2>SERVICE</h2>
-        <dl>
+        <h2 class="module-text-h2">SERVICE</h2>
+        <dl class="module-text-intro">
           <dt>
             あらゆる力を、<br class="sp">
             進化のために。
@@ -134,8 +134,8 @@ Utils::get_component('header');
   <section class="case">
     <div class="inner">
       <div class="intro">
-        <h2>CASE</h2>
-        <dl>
+        <h2 class="module-text-h2">CASE</h2>
+        <dl class="module-text-intro">
           <dt>
             実績が証明する、<br class="sp">
             確かな力。
@@ -200,7 +200,7 @@ Utils::get_component('header');
     <div class="inner">
       <div class="content-wrapper">
         <div class="intro">
-          <h2>NEWS</h2>
+          <h2 class="module-text-h2">NEWS</h2>
         </div>
         <ul class="news-list">
           <li>
@@ -259,8 +259,8 @@ Utils::get_component('header');
   <section class="career">
     <div class="inner">
       <div class="intro">
-        <h2>CAREER</h2>
-        <dl>
+        <h2 class="module-text-h2">CAREER</h2>
+        <dl class="module-text-intro">
           <dt>
             私たちと一緒に働く<br class="sp" aria-hidden="true">
             メンバーを探しています。
