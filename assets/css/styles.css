@@ -1,6 +1,7 @@
 /*!*************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!../assets/scss/styles.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
 /*! destyle.css v3.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -890,7 +891,7 @@ textarea {
   }
 }
 .module-image-block {
-  padding-block: 10rem;
+  padding-block: 6rem;
 }
 .module-image-block > .inner {
   --image-block-width: 94svw;
@@ -985,6 +986,91 @@ textarea {
   }
   .module-text-intro dd {
     margin-top: 2rem;
+    font-size: 3.2rem;
+  }
+}
+
+.module-card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+.module-card-list > li {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.module-card-list > li a {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  gap: 1.4rem;
+  border-radius: 1.4rem;
+  padding: 2.6rem;
+  background-color: #fff;
+}
+.module-card-list > li a figure {
+  overflow: clip;
+  border-radius: 2rem;
+  aspect-ratio: 3/2;
+}
+.module-card-list > li a figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: scale 0.3s;
+}
+.module-card-list > li a dl dt {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.module-card-list > li a dl dt .tag {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: clip;
+  padding: 0.6rem 1.8rem;
+  border-radius: 100svw;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 400;
+}
+.module-card-list > li a dl dt time {
+  font-weight: 600;
+}
+.module-card-list > li a dl dd {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: clip;
+  margin-top: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+@media (any-hover: hover) {
+  .module-card-list > li a:hover figure img {
+    scale: 1.2;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .module-card-list {
+    grid-template-columns: revert;
+    gap: 6rem;
+  }
+  .module-card-list > li a {
+    gap: 2rem;
+    padding: 4rem;
+  }
+  .module-card-list > li a dl dt {
+    gap: 1.6rem;
+    font-size: 2.4rem;
+  }
+  .module-card-list > li a dl dd {
     font-size: 3.2rem;
   }
 }
@@ -1187,72 +1273,7 @@ section > .inner {
   margin-inline: auto 0;
 }
 .front-page section.case > .inner .case-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
   margin-top: 6rem;
-}
-.front-page section.case > .inner .case-list > li {
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-.front-page section.case > .inner .case-list > li a {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 2;
-  gap: 1.4rem;
-  border-radius: 1.4rem;
-  padding: 2.6rem;
-  background-color: #fff;
-}
-.front-page section.case > .inner .case-list > li a figure {
-  overflow: clip;
-  border-radius: 2rem;
-  aspect-ratio: 3/2;
-}
-.front-page section.case > .inner .case-list > li a figure img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: scale 0.3s;
-}
-.front-page section.case > .inner .case-list > li a dl dt {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 1.6rem;
-  line-height: 1.6;
-}
-.front-page section.case > .inner .case-list > li a dl dt .tag {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: clip;
-  padding: 0.6rem 1.8rem;
-  border-radius: 100svw;
-  background-color: var(--color-primary);
-  color: #fff;
-  font-weight: 400;
-}
-.front-page section.case > .inner .case-list > li a dl dt time {
-  font-weight: 600;
-}
-.front-page section.case > .inner .case-list > li a dl dd {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: clip;
-  margin-top: 1.2rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.6;
-}
-@media (any-hover: hover) {
-  .front-page section.case > .inner .case-list > li a:hover figure img {
-    scale: 1.2;
-  }
 }
 .front-page section.case > .inner .module-base-button {
   margin-top: 4rem;
@@ -1395,21 +1416,6 @@ section > .inner {
     margin-top: 1.6rem;
     font-size: 3.2rem;
   }
-  .front-page section.case > .inner .case-list {
-    grid-template-columns: revert;
-    gap: 6rem;
-  }
-  .front-page section.case > .inner .case-list > li a {
-    gap: 2rem;
-    padding: 4rem;
-  }
-  .front-page section.case > .inner .case-list > li a dl dt {
-    gap: 1.6rem;
-    font-size: 2.4rem;
-  }
-  .front-page section.case > .inner .case-list > li a dl dd {
-    font-size: 3.2rem;
-  }
   .front-page section.news > .inner .content-wrapper {
     grid-template-columns: revert;
     gap: 6rem;
@@ -1531,6 +1537,107 @@ section > .inner {
     gap: 0;
     padding-block: 4rem;
     font-size: 3.2rem;
+  }
+}
+.service-page section.our-service {
+  background-color: #fff;
+  border-top-right-radius: 10svw;
+  border-bottom-right-radius: 10svw;
+}
+.service-page section.our-service > .inner .our-service-list {
+  margin-top: 6rem;
+}
+.service-page section.our-service > .inner .our-service-list > li {
+  display: grid;
+  grid-template-columns: 1fr 48rem;
+  gap: 6rem;
+  padding-block: 6rem;
+}
+.service-page section.our-service > .inner .our-service-list > li:first-of-type {
+  padding-top: 0;
+}
+.service-page section.our-service > .inner .our-service-list > li:not(:first-of-type) {
+  border-top: 1px solid color-mix(in srgb, var(--color-gray) 60%, transparent);
+}
+.service-page section.our-service > .inner .our-service-list > li:last-of-type {
+  padding-bottom: 0;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dt span {
+  display: block;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dt span.en {
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dt span.ja {
+  margin-top: 1rem;
+  font-size: 3.6rem;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dd {
+  margin-top: 2rem;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dd p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dd .detail-list {
+  margin-top: 2rem;
+  border-radius: 1rem;
+  background-color: color-mix(in srgb, var(--color-gray) 32%, transparent);
+  padding: 3.2rem 2rem;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dd .detail-list > li {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dd .detail-list > li + li {
+  margin-top: 1rem;
+}
+.service-page section.our-service > .inner .our-service-list > li dl dd .detail-list > li::before {
+  content: "・";
+}
+.service-page section.our-service > .inner .our-service-list > li figure {
+  overflow: clip;
+  border-radius: 2rem;
+  aspect-ratio: 1;
+}
+.service-page section.our-service > .inner .our-service-list > li figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.service-page section.case > .inner .module-base-button {
+  margin-top: 4rem;
+  margin-inline: auto 0;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .service-page section.our-service > .inner .our-service-list > li {
+    grid-template-columns: revert;
+    gap: 4rem;
+  }
+  .service-page section.our-service > .inner .our-service-list > li dl {
+    order: 2;
+  }
+  .service-page section.our-service > .inner .our-service-list > li dl dt span.en {
+    font-size: 2.8rem;
+  }
+  .service-page section.our-service > .inner .our-service-list > li dl dt span.ja {
+    font-size: 5.2rem;
+  }
+  .service-page section.our-service > .inner .our-service-list > li dl dd p {
+    font-size: 3.2rem;
+  }
+  .service-page section.our-service > .inner .our-service-list > li dl dd .detail-list > li {
+    font-size: 3.2rem;
+  }
+  .service-page section.our-service > .inner .our-service-list > li figure {
+    order: 1;
+    aspect-ratio: 5/3;
   }
 }
 .not-found-page main > .content-wrapper {

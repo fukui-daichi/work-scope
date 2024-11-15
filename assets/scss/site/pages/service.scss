@@ -1,0 +1,158 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.service-page {
+  section {
+    &.our-service {
+      background-color: #fff;
+      border-top-right-radius: 10svw;
+      border-bottom-right-radius: 10svw;
+
+      > .inner {
+        .our-service-list {
+          margin-top: 6rem;
+
+          > li {
+            display: grid;
+            grid-template-columns: 1fr 48rem;
+            gap: 6rem;
+            padding-block: 6rem;
+
+            &:first-of-type {
+              padding-top: 0;
+            }
+
+            &:not(:first-of-type) {
+              border-top: 1px solid color-mix(in srgb, var(--color-gray) 60%, transparent);
+            }
+
+            &:last-of-type {
+              padding-bottom: 0;
+            }
+
+            dl {
+              dt {
+                span {
+                  display: block;
+
+                  &.en {
+                    color: var(--color-primary);
+                    font-size: 1.6rem;
+                    letter-spacing: 0.04em;
+                  }
+
+                  &.ja {
+                    margin-top: 1rem;
+                    font-size: 3.6rem;
+                  }
+                }
+              }
+
+              dd {
+                margin-top: 2rem;
+
+                p {
+                  font-size: 1.8rem;
+                  line-height: 1.6;
+                }
+
+                .detail-list {
+                  margin-top: 2rem;
+                  border-radius: 1rem;
+                  background-color: color-mix(in srgb, var(--color-gray) 32%, transparent);
+                  padding: 3.2rem 2rem;
+
+                  > li {
+                    font-size: 1.8rem;
+                    line-height: 1.6;
+                    text-indent: -1em;
+                    padding-left: 1em;
+
+                    & + li {
+                      margin-top: 1rem;
+                    }
+
+                    &::before {
+                      content: "・";
+                    }
+                  }
+                }
+              }
+            }
+
+            figure {
+              overflow: clip;
+              border-radius: 2rem;
+              aspect-ratio: 1;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.case {
+      > .inner {
+        .module-base-button {
+          margin-top: 4rem;
+          margin-inline: auto 0;
+        }
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+  .service-page {
+    section {
+      &.our-service {
+        > .inner {
+          .our-service-list {
+            > li {
+              grid-template-columns: revert;
+              gap: 4rem;
+
+              dl {
+                order: 2;
+
+                dt {
+                  span {
+                    &.en {
+                      font-size: 2.8rem;
+                    }
+
+                    &.ja {
+                      font-size: 5.2rem;
+                    }
+                  }
+                }
+
+                dd {
+                  p {
+                    font-size: 3.2rem;
+                  }
+
+                  .detail-list {
+                    > li {
+                      font-size: 3.2rem;
+                    }
+                  }
+                }
+              }
+
+              figure {
+                order: 1;
+                aspect-ratio: 5/3;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

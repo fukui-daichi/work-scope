@@ -145,7 +145,7 @@ Utils::get_component('header');
           </dd>
         </dl>
       </div>
-      <ul class="case-list">
+      <ul class="case-list module-card-list">
         <li>
           <a href="#">
             <figure>
