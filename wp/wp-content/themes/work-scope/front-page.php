@@ -52,7 +52,7 @@ Utils::get_component('header');
             採用／人事制度／DX推進／システム導⼊／新規事業企画／業務改善などをご⽀援しています。
           </dd>
         </dl>
-        <a href="/company" class="module-base-button">
+        <a href="/company" class="module-base-button" hx-get="/company" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
           <span class="icon"></span>
           <span class="text">企業情報をみる</span>
         </a>
@@ -116,7 +116,7 @@ Utils::get_component('header');
           </dl>
         </li>
       </ul>
-      <a href="/service" class="module-base-button">
+      <a href="/service" class="module-base-button" hx-get="/service" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">事業内容をみる</span>
       </a>
@@ -189,7 +189,7 @@ Utils::get_component('header');
           </a>
         </li>
       </ul>
-      <a href="/case" class="module-base-button">
+      <a href="/case" class="module-base-button" hx-get="/case" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">実績紹介をみる</span>
       </a>
@@ -249,7 +249,7 @@ Utils::get_component('header');
           </li>
         </ul>
       </div>
-      <a href="/news" class="module-base-button">
+      <a href="/news" class="module-base-button" hx-get="/news" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">一覧をみる</span>
       </a>
@@ -271,7 +271,7 @@ Utils::get_component('header');
           </dd>
         </dl>
       </div>
-      <a href="/news" class="module-base-button other-tab">
+      <a href="#" class="module-base-button other-tab">
         <span class="icon"></span>
         <span class="text">採用情報について</span>
       </a>

@@ -7,7 +7,7 @@ use WorkScope\Inc\Utils\Utils;
   <div class="inner">
     <div class="content-wrapper">
       <div class="left">
-        <a href="/" class="logo">
+        <a href="/" class="logo" hx-get="/" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
           <svg>
             <use href="#site-logo-white" />
           </svg>
@@ -24,12 +24,12 @@ use WorkScope\Inc\Utils\Utils;
       <div class="right">
         <nav>
           <ul class="navlist">
-            <li><a href="/company">企業情報</a></li>
-            <li><a href="/service">事業内容</a></li>
-            <li><a href="/case">実績紹介</a></li>
-            <li><a href="/news">お知らせ</a></li>
+            <li><a href="/company" hx-get="/company" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">企業情報</a></li>
+            <li><a href="/service" hx-get="/service" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">事業内容</a></li>
+            <li><a href="/case" hx-get="/case" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">実績紹介</a></li>
+            <li><a href="/news" hx-get="/news" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">お知らせ</a></li>
             <li><a href="#" class="other-tab">採用情報</a></li>
-            <li><a href="/contact">お問い合わせ</a></li>
+            <li><a href="/contact" hx-get="/contact" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
