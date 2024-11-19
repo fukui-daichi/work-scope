@@ -11,7 +11,6 @@ Utils::get_component('head', $page_config);
 Utils::get_component('header');
 ?>
 
-
 <main class="service-page" data-hx-target>
   <?php Utils::get_component('lower-header', $page_config); ?>
 

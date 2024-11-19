@@ -1,0 +1,133 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.archive-news-page {
+  section {
+    &.archive-news {
+      .category-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+
+        li {
+          a {
+            display: grid;
+            place-items: center;
+            padding: 0.6rem 1.2rem;
+            font-size: 2rem;
+            font-weight: 500;
+
+            &.current {
+              border-bottom: 2px solid var(--color-primary);
+            }
+
+            @include modules.hover-opacity();
+          }
+        }
+      }
+
+      .news-list {
+        margin-top: 4rem;
+
+        li {
+          a {
+            display: block;
+            padding: 2.4rem 1.2rem;
+            border-bottom: 1px solid color-mix(in srgb, var(--color-gray) 60%, transparent);
+            line-height: 1.6;
+
+            dl {
+              display: grid;
+              grid-template-columns: 32rem 1fr;
+              gap: 4rem;
+              transition: translate 0.2s;
+
+              dt {
+                display: flex;
+                align-items: center;
+                gap: 1.6rem;
+                font-size: 1.8rem;
+                font-weight: 400;
+
+                .category {
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 1;
+                  overflow: clip;
+                  padding: 0.4rem 2.2rem;
+                  border-radius: 100svw;
+                  background-color: var(--color-primary);
+                  color: #fff;
+                }
+
+                time {
+                  color: color-mix(in srgb, var(--color-gray) 80%, transparent);
+                }
+              }
+
+              dd {
+                font-size: 2rem;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: clip;
+              }
+            }
+
+            &:hover {
+              @media (any-hover: hover) {
+                dl {
+                  translate: 2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+  .archive-news-page {
+    section {
+      &.archive-news {
+        .category-list {
+          gap: 2rem 4rem;
+
+          li {
+            a {
+              font-size: 3.2rem;
+            }
+          }
+        }
+
+        .news-list {
+          li {
+            a {
+              padding: 4rem 1.2rem;
+
+              dl {
+                grid-template-columns: revert;
+                gap: 2rem;
+
+                dt {
+                  display: flex;
+                  align-items: center;
+                  gap: 1.6rem;
+                  font-size: 2.8rem;
+                  font-weight: 400;
+                }
+
+                dd {
+                  font-size: 3.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
