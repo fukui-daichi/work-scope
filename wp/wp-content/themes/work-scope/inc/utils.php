@@ -125,4 +125,16 @@ class Utils
       the_content();
     }
   }
+
+  /**
+   * URLクエリパラメータを取得します
+   *
+   * @param string $param_name 取得するパラメータ名
+   * @param string $default デフォルト値（パラメータが存在しない場合に返される）
+   * @return string サニタイズされたパラメータ値またはデフォルト値
+   */
+  public static function get_query_param(string $param_name, string $default = ''): string
+  {
+    return isset($_GET[$param_name]) ? sanitize_text_field($_GET[$param_name]) : $default;
+  }
 }

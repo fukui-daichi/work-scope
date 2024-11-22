@@ -40,6 +40,7 @@
             dl {
               display: grid;
               grid-template-columns: 32rem 1fr;
+              align-items: flex-start;
               gap: 4rem;
               transition: translate 0.2s;
 
@@ -70,7 +71,7 @@
                 font-size: 2rem;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
+                -webkit-line-clamp: 1;
                 overflow: clip;
               }
             }
@@ -84,6 +85,11 @@
             }
           }
         }
+      }
+
+      .is-empty {
+        margin-top: 4rem;
+        font-size: 2rem;
       }
     }
   }
@@ -126,6 +132,10 @@
               }
             }
           }
+        }
+
+        .is-empty {
+          font-size: 3.2rem;
         }
       }
     }

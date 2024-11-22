@@ -3,105 +3,25 @@
     "title": "ニュース",
     "fields": [
         {
-            "key": "field_67381c00139db",
-            "label": "メインコンテンツ",
-            "name": "main-contents",
+            "key": "field_673db088ad368",
+            "label": "本文",
+            "name": "body_text",
             "aria-label": "",
-            "type": "flexible_content",
+            "type": "textarea",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "layouts": {
-                "layout_67381c53983db": {
-                    "key": "layout_67381c53983db",
-                    "name": "h2-block",
-                    "label": "見出し（大）",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_67382d60139dc",
-                            "label": "見出し",
-                            "name": "head",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        },
-                        {
-                            "key": "field_67382ddc139dd",
-                            "label": "本文",
-                            "name": "body-text",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": "",
-                            "placeholder": "",
-                            "new_lines": ""
-                        },
-                        {
-                            "key": "field_67382df6139de",
-                            "label": "上下の余白",
-                            "name": "margin-block",
-                            "aria-label": "",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "なし": "なし",
-                                "上": "上",
-                                "下": "下",
-                                "両方": "両方"
-                            },
-                            "default_value": "なし",
-                            "return_format": "value",
-                            "multiple": 0,
-                            "allow_null": 0,
-                            "allow_in_bindings": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                }
-            },
-            "min": "",
-            "max": "",
-            "button_label": "行を追加"
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "br"
         }
     ],
     "location": [
@@ -122,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731735247
+    "modified": 1732096466
 }
