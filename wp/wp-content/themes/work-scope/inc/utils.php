@@ -51,25 +51,6 @@ class Utils
   }
 
   /**
-   * 特定のページに変数を展開します
-   *
-   * @param string $page 変数を展開するページ名
-   * @param array $vars スコープに展開される変数の配列
-   * @return void
-   */
-  public static function set_vars(string $page, array $vars = []): void
-  {
-    // 現在のページが指定されたページと一致するか確認
-    $current_page = basename(get_page_template(), '.php');
-
-    if ($current_page !== $page || empty($vars)) {
-      return;
-    }
-
-    extract($vars);
-  }
-
-  /**
    * パーシャルビューファイルをオプションの変数と共にインクルードします。
    *
    * @param string $component パーシャルビューファイルの名前

@@ -63,7 +63,7 @@
                 }
 
                 time {
-                  color: color-mix(in srgb, var(--color-gray) 80%, transparent);
+                  color: var(--color-gray);
                 }
               }
 

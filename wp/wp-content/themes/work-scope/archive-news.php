@@ -1,7 +1,7 @@
 <?php
 
 use WorkScope\Inc\Utils\Utils;
-use WorkScope\Inc\Service\Archive\News\PostType\NewsArchiveData;
+use WorkScope\Inc\Service\Archive\News\NewsArchiveData;
 
 $page_config = NewsArchiveData::get_page_config();
 $news_list = NewsArchiveData::get_news_list();
@@ -57,17 +57,18 @@ Utils::get_component('header');
                 hx-select="[data-hx-target]">
                 <dl>
                   <dt>
-                    <span class="category"><?php echo $list['category'][0]->name; ?></span>
+                    <span class="category"><?php echo $list['category']; ?></span>
                     <time datetime="<?php echo $list['date']['iso']; ?>"><?php echo $list['date']['display']; ?></time>
                   </dt>
                   <dd>
-                    <p><?php echo $list['body_text']; ?></p>
+                    <p><?php echo $list['title']; ?></p>
                   </dd>
                 </dl>
               </a>
             </li>
           <?php } ?>
         </ul>
+        <?php wp_reset_postdata(); ?>
       <?php } else { ?>
         <p class="is-empty">現在、記事の投稿はありません。</p>
       <?php } ?>

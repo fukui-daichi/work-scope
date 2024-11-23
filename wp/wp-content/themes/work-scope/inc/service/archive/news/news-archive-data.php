@@ -1,6 +1,6 @@
 <?php
 
-namespace WorkScope\Inc\Service\Archive\News\PostType;
+namespace WorkScope\Inc\Service\Archive\News;
 
 if (!defined("ABSPATH")) die();
 
@@ -9,21 +9,16 @@ use WorkScope\Inc\Utils\Utils;
 class NewsArchiveData
 {
   /**
-   * ページ設定の定数
-   */
-  private const PAGE_CONFIG = [
-    "title" => "お知らせ",
-    "title_en" => "NEWS",
-  ];
-
-  /**
    * お知らせページの設定情報を取得します
    *
    * @return array ページ設定の配列
    */
   public static function get_page_config(): array
   {
-    return self::PAGE_CONFIG;
+    return [
+      "title" => "お知らせ",
+      "title_en" => "NEWS",
+    ];
   }
 
   /**
@@ -65,8 +60,12 @@ class NewsArchiveData
     }
 
     return array_map(function ($post) {
-      // 基本データ
-      $post_data = [
+      // カテゴリー情報を取得
+      $terms = get_the_terms($post->ID, 'news_category');
+      // WP_Errorチェックを追加
+      $category = (!is_wp_error($terms) && !empty($terms)) ? $terms[0]->name : '';
+
+      return [
         'id' => $post->ID,
         'title' => $post->post_title,
         'date' => [
@@ -74,19 +73,9 @@ class NewsArchiveData
           'display' => get_the_date('Y.n.j', $post->ID),
         ],
         'permalink' => get_permalink($post->ID),
-        "category" => get_the_terms($post->ID, 'news_category'),
+        'category' => $category,
+        'term' => $terms,
       ];
-
-      // ACFフィールド
-      $acf_fields = [
-        'body_text' => get_field('body_text', $post->ID),
-      ];
-
-      // すべてのデータをマージ
-      return array_merge(
-        $post_data,
-        $acf_fields,
-      );
     }, $posts);
   }
 
