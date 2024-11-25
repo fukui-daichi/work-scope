@@ -3,6 +3,7 @@
 use WorkScope\Inc\Utils;
 
 $page_config = [
+  "page_path" => "service",
   "title" => "事業内容",
   "title_en" => "SERVICE",
 ];

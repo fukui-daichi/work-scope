@@ -16,6 +16,7 @@ class NewsArchiveService
   public static function get_page_config(): array
   {
     return [
+      "page_path" => "news",
       "title" => "お知らせ",
       "title_en" => "NEWS",
     ];
