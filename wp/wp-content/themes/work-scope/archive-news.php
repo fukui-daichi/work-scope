@@ -1,11 +1,11 @@
 <?php
 
-use WorkScope\Inc\Utils\Utils;
-use WorkScope\Inc\Service\Archive\News\NewsArchiveData;
+use WorkScope\Inc\Utils;
+use WorkScope\Inc\Service\Archive\News\NewsArchiveService;
 
-$page_config = NewsArchiveData::get_page_config();
-$news_list = NewsArchiveData::get_news_list();
-$news_categories = NewsArchiveData::get_news_categories();
+$page_config = NewsArchiveService::get_page_config();
+$news_list = NewsArchiveService::get_news_list();
+$news_categories = NewsArchiveService::get_news_categories();
 $has_param_category = !empty(Utils::get_query_param("category"));
 
 Utils::get_component('head', $page_config);
@@ -58,7 +58,7 @@ Utils::get_component('header');
                 <dl>
                   <dt>
                     <span class="category"><?php echo $list['category']; ?></span>
-                    <time datetime="<?php echo $list['date']['iso']; ?>"><?php echo $list['date']['display']; ?></time>
+                    <time datetime="<?php echo $list['date_iso']; ?>"><?php echo $list['date_display']; ?></time>
                   </dt>
                   <dd>
                     <p><?php echo $list['title']; ?></p>

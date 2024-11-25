@@ -1,10 +1,10 @@
 <?php
 
-use WorkScope\Inc\Utils\Utils;
-use WorkScope\Inc\Service\Single\News\NewsSingleData;
+use WorkScope\Inc\Utils;
+use WorkScope\Inc\Service\Single\News\NewsSingleService;
 
-$page_config = NewsSingleData::get_page_config();
-$news_data = NewsSingleData::get_news_data();
+$page_config = NewsSingleService::get_page_config();
+$news_data = NewsSingleService::get_news_data();
 
 Utils::get_component('head', $page_config);
 Utils::get_component('header');
@@ -17,7 +17,7 @@ Utils::get_component('header');
         <hgroup>
           <p>
             <span class="category"><?php echo $news_data['category'] ?></span>
-            <time datetime="<?php echo $news_data['date']['iso']; ?>"><?php echo $news_data['date']['display']; ?></time>
+            <time datetime="<?php echo $news_data['date_iso']; ?>"><?php echo $news_data['date_display']; ?></time>
           </p>
           <h1><?php echo $news_data['title'] ?></h1>
         </hgroup>

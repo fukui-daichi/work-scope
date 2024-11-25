@@ -58,24 +58,25 @@ add_action("init", function () {
       ],
     ]
   );
-
-  // パーマリンクの変更（シンプル構造）
-  add_filter("post_type_link", function ($link, $post) {
-    if (in_array($post->post_type, ["news", "case"])) {
-      return home_url("/{$post->post_type}/{$post->ID}");
-    } else {
-      return $link;
-    }
-  }, 1, 2);
-
-  add_filter("rewrite_rules_array", function ($rules) {
-    $new_rewrite_rules = [
-      'news/([0-9]+)/?$' => 'index.php?post_type=news&p=$matches[1]',
-      'case/([0-9]+)/?$' => 'index.php?post_type=case&p=$matches[1]',
-    ];
-    return $new_rewrite_rules + $rules;
-  });
 });
+
+// パーマリンクの変更（シンプル構造）
+add_filter("post_type_link", function ($link, $post) {
+  if (in_array($post->post_type, ["news", "case"])) {
+    return home_url("/{$post->post_type}/{$post->ID}");
+  } else {
+    return $link;
+  }
+}, 1, 2);
+
+add_filter("rewrite_rules_array", function ($rules) {
+  $new_rewrite_rules = [
+    'news/([0-9]+)/?$' => 'index.php?post_type=news&p=$matches[1]',
+    'case/([0-9]+)/?$' => 'index.php?post_type=case&p=$matches[1]',
+  ];
+  return $new_rewrite_rules + $rules;
+});
+
 /**
  * 固定ページのエディタを非表示にする
  */

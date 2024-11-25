@@ -1,6 +1,6 @@
 <?php
 
-namespace WorkScope\Inc\Utils;
+namespace WorkScope\Inc;
 
 if (!defined("ABSPATH")) die();
 
@@ -31,6 +31,21 @@ class Utils
       return isset($o[$k]) ? $o[$k] : $d;
     } else {
       return isset($o->$k) ? $o->$k : $d;
+    }
+  }
+
+  /**
+   * ビューファイルで使用する変数を定義します。
+   *
+   * @param array $vars ビューで使用する変数の配列
+   * @return void
+   */
+  public static function set_vars(array $vars = []): void
+  {
+    foreach ($vars as $key => $value) {
+      if (is_string($key)) {
+        ${$key} = $value;
+      }
     }
   }
 

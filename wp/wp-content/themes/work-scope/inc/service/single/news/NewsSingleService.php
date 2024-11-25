@@ -4,7 +4,9 @@ namespace WorkScope\Inc\Service\Single\News;
 
 if (!defined("ABSPATH")) die();
 
-class NewsSingleData
+use WorkScope\Inc\Service\Single\News\NewsAcfService;
+
+class NewsSingleService
 {
   /**
    * お知らせ記事のページ設定情報を取得します
@@ -33,15 +35,15 @@ class NewsSingleData
     $terms = get_the_terms(get_the_ID(), 'news_category');
     $category = !empty($terms) ? $terms[0]->name : '';
 
-    return [
+    // ACFデータを取得
+    $acf_data = NewsAcfService::get_acf_data($post_id);
+
+    return array_merge([
       'id' => get_the_ID(),
       'title' => get_the_title(),
-      'date' => [
-        'iso' => get_the_date('Y-m-d'),
-        'display' => get_the_date('Y.n.j'),
-      ],
+      'date_iso' => get_the_date('Y-m-d'),
+      'date_display' => get_the_date('Y.n.j'),
       'category' => $category,
-      'body_text' => get_field('body_text', $post_id),
-    ];
+    ], $acf_data);
   }
 }

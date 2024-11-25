@@ -1,6 +1,6 @@
 <?php
 
-use WorkScope\Inc\Utils\Utils;
+use WorkScope\Inc\Utils;
 
 Utils::get_component('head');
 Utils::get_component('header');

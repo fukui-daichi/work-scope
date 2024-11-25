@@ -4,9 +4,9 @@ namespace WorkScope\Inc\Service\Archive\News;
 
 if (!defined("ABSPATH")) die();
 
-use WorkScope\Inc\Utils\Utils;
+use WorkScope\Inc\Utils;
 
-class NewsArchiveData
+class NewsArchiveService
 {
   /**
    * お知らせページの設定情報を取得します
@@ -68,10 +68,8 @@ class NewsArchiveData
       return [
         'id' => $post->ID,
         'title' => $post->post_title,
-        'date' => [
-          'iso' => get_the_date('Y-m-d', $post->ID),
-          'display' => get_the_date('Y.n.j', $post->ID),
-        ],
+        'date_iso' => get_the_date('Y-m-d', $post->ID),
+        'date_display' => get_the_date('Y.n.j', $post->ID),
         'permalink' => get_permalink($post->ID),
         'category' => $category,
         'term' => $terms,
