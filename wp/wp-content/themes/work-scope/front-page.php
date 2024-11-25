@@ -1,6 +1,9 @@
 <?php
 
 use WorkScope\Inc\Utils;
+use WorkScope\Inc\Service\Front\News\NewsArchiveService;
+
+$news_list = NewsArchiveService::get_news_list();
 
 Utils::get_component('head');
 Utils::get_component('header');
@@ -202,52 +205,34 @@ Utils::get_component('header');
         <div class="intro">
           <h2 class="module-text-h2">NEWS</h2>
         </div>
-        <ul class="news-list">
-          <li>
-            <a href="#">
-              <dl>
-                <dt>
-                  <span class="tag">お知らせ</span>
-                  <time datetime="2023-10-13">2023.10.13</time>
-                </dt>
-                <dd>ダミーテキストダミーテキストダミーテキスト</dd>
-              </dl>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>
-                  <span class="tag">お知らせ</span>
-                  <time datetime="2023-10-13">2023.10.13</time>
-                </dt>
-                <dd>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</dd>
-              </dl>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>
-                  <span class="tag">お知らせ</span>
-                  <time datetime="2023-10-13">2023.10.13</time>
-                </dt>
-                <dd>ダミーテキストダミーテキストダミーテキスト</dd>
-              </dl>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <dl>
-                <dt>
-                  <span class="tag">お知らせ</span>
-                  <time datetime="2023-10-13">2023.10.13</time>
-                </dt>
-                <dd>ダミーテキストダミーテキストダミーテキスト</dd>
-              </dl>
-            </a>
-          </li>
-        </ul>
+        <?php if (!empty($news_list)) { ?>
+          <ul class="news-list">
+            <?php foreach ($news_list as $list) { ?>
+              <li>
+                <a
+                  href="<?php echo $list['permalink']; ?>"
+                  hx-get="<?php echo $list['permalink']; ?>"
+                  hx-swap="outerHTML transition:true"
+                  hx-push-url="true"
+                  hx-target="[data-hx-target]"
+                  hx-select="[data-hx-target]">
+                  <dl>
+                    <dt>
+                      <span class="category"><?php echo $list['category']; ?></span>
+                      <time datetime="<?php echo $list['date_iso']; ?>"><?php echo $list['date_display']; ?></time>
+                    </dt>
+                    <dd>
+                      <p><?php echo $list['title']; ?></p>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+            <?php } ?>
+          </ul>
+          <?php wp_reset_postdata(); ?>
+        <?php } else { ?>
+          <p class="is-empty">現在、記事の投稿はありません。</p>
+        <?php } ?>
       </div>
       <a href="/news" class="module-base-button" hx-get="/news" hx-swap="outerHTML transition:true" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>

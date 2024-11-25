@@ -168,6 +168,8 @@
                 border-bottom: 1px solid var(--color-gray);
 
                 dl {
+                  transition: translate 0.2s;
+
                   dt {
                     display: flex;
                     align-items: center;
@@ -176,7 +178,7 @@
                     font-size: 1.6rem;
                     line-height: 1.6;
 
-                    .tag {
+                    .category {
                       display: -webkit-box;
                       -webkit-box-orient: vertical;
                       -webkit-line-clamp: 1;
@@ -205,9 +207,20 @@
                   }
                 }
 
-                @include modules.hover-opacity();
+                &:hover {
+                  @media (any-hover: hover) {
+                    dl {
+                      translate: 2rem;
+                    }
+                  }
+                }
               }
             }
+          }
+
+          .is-empty {
+            margin-top: 4rem;
+            font-size: 2rem;
           }
         }
 
@@ -363,6 +376,11 @@
                   }
                 }
               }
+            }
+
+            .is-empty {
+              margin-top: 0;
+              font-size: 3.2rem;
             }
           }
         }
