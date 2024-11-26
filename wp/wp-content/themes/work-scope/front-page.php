@@ -148,7 +148,7 @@ Utils::get_component('header');
           </dd>
         </dl>
       </div>
-      <ul class="case-list module-card-list">
+      <ul class="module-card-list">
         <li>
           <a href="#">
             <figure>
@@ -156,7 +156,7 @@ Utils::get_component('header');
             </figure>
             <dl>
               <dt>
-                <span class="tag">新規事業支援</span>
+                <span class="category">新規事業支援</span>
                 <time datetime="2023-10-15">2023.10.15</time>
               </dt>
               <dd>コンセプト・コミュニケーション設計から構築し、新規事業立ち上げを支援</dd>
@@ -170,7 +170,7 @@ Utils::get_component('header');
             </figure>
             <dl>
               <dt>
-                <span class="tag">組織・⼈事支援</span>
+                <span class="category">組織・⼈事支援</span>
                 <time datetime="2023-10-14">2023.10.14</time>
               </dt>
               <dd>課題解決につながる組織・⼈事戦略の策定を支援</dd>
@@ -184,7 +184,7 @@ Utils::get_component('header');
             </figure>
             <dl>
               <dt>
-                <span class="tag">採用支援</span>
+                <span class="category">採用支援</span>
                 <time datetime="2023-10-13">2023.10.13</time>
               </dt>
               <dd>事業拡大に伴う、中途採用の体制構築をご支援</dd>

@@ -4,29 +4,6 @@
 .archive-news-page {
   section {
     &.archive-news {
-      .category-list {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 2rem;
-
-        li {
-          a {
-            display: grid;
-            place-items: center;
-            padding: 0.6rem 1.2rem;
-            font-size: 2rem;
-            font-weight: 500;
-
-            &.current {
-              border-bottom: 2px solid var(--color-primary);
-            }
-
-            @include modules.hover-opacity();
-          }
-        }
-      }
-
       .news-list {
         margin-top: 4rem;
 
@@ -99,16 +76,6 @@
   .archive-news-page {
     section {
       &.archive-news {
-        .category-list {
-          gap: 2rem 4rem;
-
-          li {
-            a {
-              font-size: 3.2rem;
-            }
-          }
-        }
-
         .news-list {
           li {
             a {

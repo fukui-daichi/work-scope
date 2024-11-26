@@ -1,41 +1,42 @@
 <?php
 
-namespace WorkScope\Inc\Service\Archive\News;
+namespace WorkScope\Inc\Service\Archive\Case;
 
 if (!defined("ABSPATH")) die();
 
 use WorkScope\Inc\Utils;
+use WorkScope\Inc\Service\Archive\Case\CaseAcfService;
 
-class NewsArchiveService
+class CaseArchiveService
 {
   /**
-   * お知らせページの設定情報を取得します
+   * 実績紹介ページの設定情報を取得します
    *
    * @return array ページ設定の配列
    */
   public static function get_page_config(): array
   {
     return [
-      "page_path" => "news",
-      "title" => "お知らせ",
-      "title_en" => "NEWS",
+      "page_path" => "case",
+      "title" => "実績紹介",
+      "title_en" => "CASE",
     ];
   }
 
   /**
-   * ニュース一覧データを取得します
+   * 実績紹介一覧データを取得します
    *
    * @param int $posts_per_page 1ページあたりの表示件数（-1で全件取得）
    * @param int $paged 現在のページ番号
    * @return array 投稿データの配列
    */
-  public static function get_news_list(int $posts_per_page = -1, int $paged = 1): array
+  public static function get_case_list(int $posts_per_page = 6, int $paged = 1): array
   {
     // カテゴリーパラメータを取得
     $category_slug = Utils::get_query_param('category');
 
     $args = [
-      'post_type' => 'news',
+      'post_type' => 'case',
       'posts_per_page' => $posts_per_page,
       'paged' => $paged,
       'orderby' => 'date',
@@ -47,7 +48,7 @@ class NewsArchiveService
     if (!empty($category_slug)) {
       $args['tax_query'] = [
         [
-          'taxonomy' => 'news_category',
+          'taxonomy' => 'case_category',
           'field' => 'slug',
           'terms' => $category_slug,
         ],
@@ -62,31 +63,34 @@ class NewsArchiveService
 
     return array_map(function ($post) {
       // カテゴリー情報を取得
-      $terms = get_the_terms($post->ID, 'news_category');
+      $terms = get_the_terms($post->ID, 'case_category');
       // WP_Errorチェックを追加
       $category = (!is_wp_error($terms) && !empty($terms)) ? $terms[0]->name : '';
 
-      return [
+      // ACFデータを取得
+      $acf_data = CaseAcfService::get_acf_data($post->ID);
+
+      return array_merge([
         'id' => $post->ID,
         'title' => $post->post_title,
         'date_iso' => get_the_date('Y-m-d', $post->ID),
         'date_display' => get_the_date('Y.n.j', $post->ID),
         'permalink' => get_permalink($post->ID),
         'category' => $category,
-      ];
+      ], $acf_data);
     }, $posts);
   }
 
   /**
-   * ニュースカテゴリー一覧を取得します
+   * 実績紹介カテゴリー一覧を取得します
    *
    * @param array $args カテゴリー取得時の追加オプション
    * @return array カテゴリーデータの配列
    */
-  public static function get_news_categories(array $args = []): array
+  public static function get_case_categories(array $args = []): array
   {
     $categories = get_terms([
-      'taxonomy' => 'news_category',
+      'taxonomy' => 'case_category',
       'hide_empty' => false,
     ]);
 

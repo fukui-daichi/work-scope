@@ -1,0 +1,22 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.archive-case-page {
+  --padding-top: 8rem;
+
+  .archive-case {
+    > .inner {
+      .module-card-list {
+        margin-top: 4rem;
+      }
+
+      .is-empty {
+        margin-top: 4rem;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+}

@@ -35,46 +35,21 @@ class Utils
   }
 
   /**
-   * ビューファイルで使用する変数を定義します。
-   *
-   * @param array $vars ビューで使用する変数の配列
-   * @return void
-   */
-  public static function set_vars(array $vars = []): void
-  {
-    foreach ($vars as $key => $value) {
-      if (is_string($key)) {
-        ${$key} = $value;
-      }
-    }
-  }
-
-  /**
    * ビューファイルをオプションの変数と共にインクルードします。
    *
-   * @param string $view ビューファイルの名前
+   * @param string $view ビューファイルの名前（componentsディレクトリ以外の場合は'components/'を除いたパスを指定）
    * @param array $vars ビューのスコープに展開される変数の配列
    * @return void
    */
-  public static function view(string $view, array $vars = []): void
+  public static function get_component(string $view, array $vars = []): void
   {
     $theme_dir = get_template_directory();
-    if (file_exists($theme_dir . "/{$view}.php")) {
-      extract($vars);
-      include $theme_dir . "/{$view}.php";
-    }
-  }
+    $view_path = strpos($view, 'components/') === 0 ? $view : "components/{$view}";
 
-  /**
-   * パーシャルビューファイルをオプションの変数と共にインクルードします。
-   *
-   * @param string $component パーシャルビューファイルの名前
-   * @param array $vars ビューのスコープに展開される変数の配列
-   * @return void
-   */
-  public static function get_component(string $component, array $vars = []): void
-  {
-    self::view("components/{$component}", $vars);
+    if (file_exists($theme_dir . "/{$view_path}.php")) {
+      extract($vars);
+      include $theme_dir . "/{$view_path}.php";
+    }
   }
 
   /**
