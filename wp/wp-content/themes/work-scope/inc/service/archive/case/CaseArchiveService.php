@@ -10,6 +10,11 @@ use WorkScope\Inc\Service\Archive\Case\CaseAcfService;
 class CaseArchiveService
 {
   /**
+   * 1ページあたりの表示件数
+   */
+  public const POSTS_PER_PAGE = 3;
+
+  /**
    * 実績紹介ページの設定情報を取得します
    *
    * @return array ページ設定の配列
@@ -30,7 +35,7 @@ class CaseArchiveService
    * @param int $paged 現在のページ番号
    * @return array 投稿データの配列
    */
-  public static function get_case_list(int $posts_per_page = 6, int $paged = 1): array
+  public static function get_case_list(int $posts_per_page = self::POSTS_PER_PAGE, int $paged = 1): array
   {
     // カテゴリーパラメータを取得
     $category_slug = Utils::get_query_param('category');
@@ -110,5 +115,46 @@ class CaseArchiveService
         'is_current' => $current_category === $category->slug,
       ];
     }, $categories);
+  }
+
+  /**
+   * 投稿の総数を取得します
+   *
+   * @return int
+   */
+  public static function get_total_posts(): int
+  {
+    $category_slug = Utils::get_query_param('category');
+
+    $args = [
+      'post_type' => 'case',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+    ];
+
+    if (!empty($category_slug)) {
+      $args['tax_query'] = [
+        [
+          'taxonomy' => 'case_category',
+          'field' => 'slug',
+          'terms' => $category_slug,
+        ],
+      ];
+    }
+
+    $query = new \WP_Query($args);
+    return $query->found_posts;
+  }
+
+  /**
+   * 次のページのコンテンツを取得します
+   *
+   * @param int $page ページ番号
+   * @return void コンポーネントを直接出力
+   */
+  public static function get_next_page_content(int $page): void
+  {
+    $case_list = self::get_case_list(self::POSTS_PER_PAGE, $page);
+    Utils::get_component('case/card-list-items', ['case_list' => $case_list]);
   }
 }

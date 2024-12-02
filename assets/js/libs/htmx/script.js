@@ -4,8 +4,8 @@ export default () => {
   window.htmx = htmx;
 
   document.addEventListener("htmx:afterSwap", (e) => {
-    window.scrollTo({
-      top: 0,
-    });
+    // window.scrollTo({
+    //   top: 0,
+    // });
   });
 };

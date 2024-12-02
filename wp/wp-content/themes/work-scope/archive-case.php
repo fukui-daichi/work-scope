@@ -7,7 +7,8 @@ $page_config = CaseArchiveService::get_page_config();
 $case_list = CaseArchiveService::get_case_list();
 $case_categories = CaseArchiveService::get_case_categories();
 $has_param_category = !empty(Utils::get_query_param("category"));
-
+$total_posts = CaseArchiveService::get_total_posts();
+$current_count = count($case_list);
 
 Utils::get_component('head', $page_config);
 Utils::get_component('header');
@@ -46,33 +47,26 @@ Utils::get_component('header');
       </ul>
 
       <?php if (!empty($case_list)) { ?>
-        <ul class="module-card-list">
-          <?php foreach ($case_list as $case) { ?>
-            <li>
-              <a
-                href="<?php echo $case['permalink']; ?>"
-                hx-get="<?php echo $case['permalink']; ?>"
-                hx-swap="outerHTML transition:true"
-                hx-push-url="true"
-                hx-target="[data-hx-target]"
-                hx-select="[data-hx-target]">
-                <figure>
-                  <img src="<?php echo $case['thumbnail']['url']; ?>" alt="<?php echo $case['thumbnail']['alt']; ?>" width="<?php echo $case['thumbnail']['width']; ?>" height="<?php echo $case['thumbnail']['height']; ?>" decoding="async">
-                </figure>
-                <dl>
-                  <dt>
-                    <span class="category"><?php echo $case['category']; ?></span>
-                    <time datetime="<?php echo $case['date_iso']; ?>"><?php echo $case['date_display']; ?></time>
-                  </dt>
-                  <dd><?php echo $case['title']; ?></dd>
-                </dl>
-              </a>
-            </li>
-          <?php } ?>
+        <ul class="module-card-list" id="case-list">
+          <?php Utils::get_component('case/card-list-items', ['case_list' => $case_list]); ?>
         </ul>
+        <?php if ($current_count < $total_posts) { ?>
+          <button
+            class="load-more"
+            hx-get="<?php echo get_template_directory_uri(); ?>/inc/service/archive/case/LoadMoreCases.php?page=2<?php echo $has_param_category ? '&category=' . Utils::get_query_param("category") : ''; ?>"
+            hx-trigger="intersect once"
+            hx-swap="beforeend"
+            hx-target="#case-list"
+            data-page="2"
+            data-total-posts="<?php echo $total_posts; ?>"
+            data-posts-per-page="<?php echo CaseArchiveService::POSTS_PER_PAGE; ?>"
+            data-template-url="<?php echo get_template_directory_uri(); ?>"
+            data-category="<?php echo Utils::get_query_param('category'); ?>">
+          </button>
+        <?php } ?>
         <?php wp_reset_postdata(); ?>
       <?php } else { ?>
-        <p class="is-empty">現在、実績紹介はありません。</p>
+        <p class=" is-empty">現在、実績紹介はありません。</p>
       <?php } ?>
     </div>
   </section>

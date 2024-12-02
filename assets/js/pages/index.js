@@ -1,7 +1,9 @@
-import top from "./top/script.js";
-import company from "./company/script.js";
+import topPage from "./top/script.js";
+import companyPage from "./company/script.js";
+import casePage from "./case/script.js";
 
 export default () => {
-  top();
-  company();
+  topPage();
+  companyPage();
+  casePage();
 };
