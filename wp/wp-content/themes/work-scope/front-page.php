@@ -9,7 +9,6 @@ Utils::get_component('head');
 Utils::get_component('header');
 ?>
 
-
 <main class="front-page" data-hx-target>
   <div class="mv">
     <div class="inner">
