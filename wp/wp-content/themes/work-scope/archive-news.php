@@ -23,7 +23,7 @@ Utils::get_component('header');
             href="/news"
             class="<?php echo !$has_param_category ? 'current' : ''; ?>"
             hx-get="/news"
-            hx-swap="outerHTML transition:true show:window:top"
+            hx-swap="outerHTML transition:true"
             hx-push-url="true"
             hx-target="[data-hx-target]"
             hx-select="[data-hx-target]">すべての記事</a>
@@ -34,7 +34,7 @@ Utils::get_component('header');
               href="/news?category=<?php echo $category['slug']; ?>"
               class="<?php echo $category['is_current'] ? 'current' : ''; ?>"
               hx-get="/news?category=<?php echo $category['slug']; ?>"
-              hx-swap="outerHTML transition:true show:window:top"
+              hx-swap="outerHTML transition:true"
               hx-push-url="true"
               hx-target="[data-hx-target]"
               hx-select="[data-hx-target]">
