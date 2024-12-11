@@ -12,7 +12,7 @@ class CaseArchiveService
   /**
    * 1ページあたりの表示件数
    */
-  public const POSTS_PER_PAGE = 3;
+  public const POSTS_PER_PAGE = 6;
 
   /**
    * 実績紹介ページの設定情報を取得します
@@ -144,17 +144,5 @@ class CaseArchiveService
 
     $query = new \WP_Query($args);
     return $query->found_posts;
-  }
-
-  /**
-   * 次のページのコンテンツを取得します
-   *
-   * @param int $page ページ番号
-   * @return void コンポーネントを直接出力
-   */
-  public static function get_next_page_content(int $page): void
-  {
-    $case_list = self::get_case_list(self::POSTS_PER_PAGE, $page);
-    Utils::get_component('case/card-list-items', ['case_list' => $case_list]);
   }
 }

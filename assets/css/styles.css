@@ -1807,6 +1807,17 @@ section > .inner {
   margin-top: 4rem;
   font-size: 2rem;
 }
+.archive-case-page .archive-case > .inner .module-card-list > li {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.archive-case-page .archive-case > .inner .module-card-list > li.htmx-added {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+.archive-case-page .archive-case > .inner .module-card-list > li.htmx-settling {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .not-found-page .not-found h2 {
   font-size: 2rem;
