@@ -1140,14 +1140,11 @@ html {
 }
 
 body {
-  --clamp-viewport-min: 375;
-  --clamp-viewport-max: 1200;
-  --clamp-min: 14;
-  --clamp-max: 16;
   background-color: var(--color-bg);
   overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;
+  scroll-margin-top: var(--header-height);
 }
 
 [id] {

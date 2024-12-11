@@ -19,7 +19,7 @@ foreach ($items_data as $item): ?>
     <a
       href="<?php echo esc_url($item['case']['permalink']); ?>"
       hx-get="<?php echo esc_url($item['case']['permalink']); ?>"
-      hx-swap="outerHTML transition:true"
+      hx-swap="outerHTML transition:true show:window:top"
       hx-push-url="true"
       hx-target="[data-hx-target]"
       hx-select="[data-hx-target]">
