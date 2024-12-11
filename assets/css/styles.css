@@ -1112,6 +1112,79 @@ textarea {
   font-size: 1.8rem;
   line-height: 1.8;
 }
+.module-article-card .thumbnail {
+  margin-bottom: 4rem;
+  width: 100%;
+  aspect-ratio: 5/3;
+}
+.module-article-card .thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.module-article-card .main-contents {
+  --base-margin: 6rem;
+  --base-font-size: 1.8rem;
+}
+.module-article-card .main-contents .head2-block h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.module-article-card .main-contents .head2-block p {
+  margin-top: 1rem;
+  font-size: var(--base-font-size);
+  line-height: 1.5;
+}
+.module-article-card .main-contents .head3-block h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.module-article-card .main-contents .head3-block p {
+  margin-top: 1rem;
+  font-size: var(--base-font-size);
+  line-height: 1.5;
+}
+.module-article-card .main-contents .unordered-list > li {
+  padding-left: 1em;
+  font-size: var(--base-font-size);
+  line-height: 1.5;
+  text-indent: -1em;
+}
+.module-article-card .main-contents .unordered-list > li + li {
+  margin-top: 0.6rem;
+}
+.module-article-card .main-contents .unordered-list > li::before {
+  content: "・";
+}
+.module-article-card .main-contents .ordered-list {
+  counter-reset: item;
+}
+.module-article-card .main-contents .ordered-list > li {
+  position: relative;
+  padding-left: 1em;
+  font-size: var(--base-font-size);
+  line-height: 1.5;
+  text-indent: -1em;
+  counter-increment: item;
+}
+.module-article-card .main-contents .ordered-list > li + li {
+  margin-top: 0.6rem;
+}
+.module-article-card .main-contents .ordered-list > li::before {
+  content: counter(item) ". ";
+}
+.module-article-card .main-contents .has-margin-top {
+  margin-top: var(--base-margin);
+}
+.module-article-card .main-contents .has-margin-bottom {
+  margin-bottom: var(--base-margin);
+}
+.module-article-card .main-contents .has-margin-block {
+  margin-block: 4rem;
+}
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
   .module-article-card hgroup > p {
@@ -1124,6 +1197,15 @@ textarea {
   }
   .module-article-card .body-text {
     font-size: 3.2rem;
+  }
+  .module-article-card .main-contents {
+    --base-font-size: 2.6rem;
+  }
+  .module-article-card .main-contents .head2-block h2 {
+    font-size: 3.6rem;
+  }
+  .module-article-card .main-contents .head3-block h3 {
+    font-size: 3rem;
   }
 }
 .module-category-list {
@@ -1829,6 +1911,11 @@ section > .inner {
 .archive-case-page .archive-case > .inner .module-card-list > li.htmx-settling {
   opacity: 1;
   transform: translateY(0);
+}
+
+.single-case-page section.single-case > .inner .module-base-button {
+  margin-top: 4rem;
+  margin-inline: auto;
 }
 
 .not-found-page .not-found h2 {

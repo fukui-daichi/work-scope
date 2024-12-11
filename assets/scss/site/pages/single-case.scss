@@ -1,0 +1,18 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.single-case-page {
+  section {
+    &.single-case {
+      > .inner {
+        .module-base-button {
+          margin-top: 4rem;
+          margin-inline: auto;
+        }
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+}
