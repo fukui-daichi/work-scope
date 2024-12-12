@@ -8,8 +8,9 @@ $items_data = CaseViewService::prepare_card_list_data(
   $category ?? null,
   $start_index ?? 0
 );
+?>
 
-foreach ($items_data as $item): ?>
+<?php foreach ($items_data as $item): ?>
   <li <?php if ($item['is_last_in_set'] && $item['should_load_more']): ?>
     hx-get="<?php echo esc_url($item['load_more_url']); ?>"
     hx-trigger="intersect once threshold:1"
