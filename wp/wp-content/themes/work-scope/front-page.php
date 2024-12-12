@@ -41,7 +41,7 @@ Utils::get_component('header');
   </div>
 
   <section class="company">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">COMPANY</h2>
         <dl class="module-text-intro">
@@ -66,7 +66,7 @@ Utils::get_component('header');
   </section>
 
   <section class="service">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">SERVICE</h2>
         <dl class="module-text-intro">
@@ -128,13 +128,14 @@ Utils::get_component('header');
   <div class="module-image-block right">
     <div class="inner">
       <figure>
-        <img src="/assets/images/front/image-block/img01.jpg" alt="" width="1080" height="720" decoding="async">
+        <img src="/assets/images/front/image-block/img01.jpg" alt="" width="1080" height="720" decoding="async" data-gsap-scroll="fadeIn" data-gsap-duration="1.2" data-gsap-delay="0.2">
+        <div class="reveal-mask" data-gsap-scroll="moveToRight" data-gsap-duration="1"></div>
       </figure>
     </div>
   </div>
 
   <section class="case">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">CASE</h2>
         <dl class="module-text-intro">
@@ -199,7 +200,7 @@ Utils::get_component('header');
   </section>
 
   <section class="news">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="content-wrapper">
         <div class="intro">
           <h2 class="module-text-h2">NEWS</h2>
@@ -241,7 +242,7 @@ Utils::get_component('header');
   </section>
 
   <section class="career">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">CAREER</h2>
         <dl class="module-text-intro">

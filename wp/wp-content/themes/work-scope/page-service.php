@@ -16,7 +16,7 @@ Utils::get_component('header');
   <?php Utils::get_component('lower-header', $page_config); ?>
 
   <section class="business-model">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">BUSINESS MODEL</h2>
         <dl class="module-text-intro">
@@ -40,7 +40,7 @@ Utils::get_component('header');
   </section>
 
   <section class="our-service">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">OUR SERVICE</h2>
       </div>
@@ -119,7 +119,7 @@ Utils::get_component('header');
   </section>
 
   <section class="case">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">CASE</h2>
       </div>

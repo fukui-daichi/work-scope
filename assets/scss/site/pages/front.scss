@@ -5,8 +5,8 @@
   .mv {
     > .inner {
       hgroup {
-        margin-block: calc(var(--header-height) + 10rem) 10rem;
         margin-inline: auto;
+        padding-block: 10rem;
         width: min(calc(100% - var(--content-padding-inline)), var(--content-width));
 
         h1 {

@@ -17,7 +17,7 @@ Utils::get_component('header');
   <?php Utils::get_component('lower-header', $page_config); ?>
 
   <section class="message">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">MESSAGE</h2>
         <dl class="module-text-intro">
@@ -48,7 +48,7 @@ Utils::get_component('header');
   </section>
 
   <section class="our-value">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">OUR VALUE</h2>
       </div>
@@ -102,13 +102,14 @@ Utils::get_component('header');
   <div class="module-image-block right">
     <div class="inner">
       <figure>
-        <img src="/assets/images/company/image-block/img02.jpg" alt="" width="1080" height="608" decoding="async">
+        <img src="/assets/images/company/image-block/img02.jpg" alt="" width="1080" height="608" decoding="async" data-gsap-scroll="fadeIn" data-gsap-duration="1.2" data-gsap-delay="0.2">
+        <div class="reveal-mask" data-gsap-scroll="moveToRight" data-gsap-duration="1"></div>
       </figure>
     </div>
   </div>
 
   <section class="company-profile">
-    <div class="inner">
+    <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">COMPANY PROFILE</h2>
       </div>

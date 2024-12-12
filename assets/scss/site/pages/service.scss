@@ -98,6 +98,10 @@
 
     &.case {
       > .inner {
+        .module-card-list {
+          margin-top: 6rem;
+        }
+
         .module-base-button {
           margin-top: 4rem;
           margin-inline: auto 0;

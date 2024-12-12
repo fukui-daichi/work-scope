@@ -1,63 +1,86 @@
 import { gsap } from "./esm/index.js";
 import ScrollTrigger from "./esm/ScrollTrigger.js";
+import animations from "./animations.js";
 
+/**
+ * GSAPプラグインの登録
+ * @description ScrollTriggerプラグインを有効化
+ */
 gsap.registerPlugin(ScrollTrigger);
 
-const animations = {
-  textReveal: (elements) => {
-    return gsap.fromTo(
-      elements,
-      { clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" },
-      {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        duration: 0.75,
-        ease: "power2.inOut",
-        stagger: 1,
-      }
-    );
-  },
-  fadeInBottom: (elements) => {
-    return gsap.fromTo(
-      elements,
-      {
-        autoAlpha: 0,
-        y: 50,
-      },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.2,
-      }
-    );
-  },
+/**
+ * GSAPのグローバル設定
+ * @description パフォーマンス最適化と警告の制御
+ */
+gsap.config({
+  // 3D変形を無効化（パフォーマンス最適化のため）
+  force3D: false,
+  // 存在しないターゲットの警告を無効化
+  nullTargetWarn: false,
+  // トライアル版の警告を無効化
+  trialWarn: false,
+});
+
+/**
+ * GSAPのデフォルト値設定
+ * @description アニメーションのデフォルト再生時間を1秒に設定
+ */
+gsap.defaults({
+  duration: 1,
+});
+
+/**
+ * 要素から設定値を取得する関数
+ */
+const getConfigFromElement = (element) => {
+  const config = {};
+
+  // duration の取得
+  const duration = element.dataset.gsapDuration;
+  if (duration) config.duration = parseFloat(duration);
+
+  // delay の取得
+  const delay = element.dataset.gsapDelay;
+  if (delay) config.delay = parseFloat(delay);
+
+  return config;
 };
 
-const createScrollTrigger = (element, animation) => {
-  ScrollTrigger.create({
-    trigger: element,
-    start: "bottom bottom",
-    onEnter: () => animation.play(),
-    once: true,
+/**
+ * スクロールアニメーションを初期化する関数
+ */
+const initScrollAnimations = () => {
+  document.querySelectorAll("[data-gsap-scroll]").forEach((element) => {
+    const animationType = element.dataset.gsapScroll;
+
+    if (animations[animationType]) {
+      // 要素から設定を取得
+      const config = getConfigFromElement(element);
+
+      gsap.fromTo(
+        element,
+        {
+          ...animations[animationType].fromTo.from,
+        },
+        {
+          ...animations[animationType].fromTo.to,
+          ...config,
+          scrollTrigger: {
+            trigger: element,
+            start: "top 60%",
+            once: true,
+            // markers: true,
+          },
+        }
+      );
+    }
   });
 };
 
-const initializeAnimation = (element) => {
-  const animationType = element.getAttribute("data-gsap") || element.getAttribute("data-gsap-timeline");
-  if (!animations[animationType]) return;
-
-  const isTimeline = element.hasAttribute("data-gsap-timeline");
-  const targetElements = isTimeline ? element.children : element;
-
-  const animation = isTimeline ? gsap.timeline().add(animations[animationType](targetElements)) : animations[animationType](targetElements);
-
-  animation.pause();
-  createScrollTrigger(element, animation);
-};
-
 export default () => {
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("[data-gsap], [data-gsap-timeline]").forEach(initializeAnimation);
+  initScrollAnimations();
+
+  document.addEventListener("htmx:afterSwap", (e) => {
+    initScrollAnimations();
   });
 };
