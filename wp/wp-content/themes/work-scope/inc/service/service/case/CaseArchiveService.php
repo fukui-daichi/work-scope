@@ -1,10 +1,10 @@
 <?php
 
-namespace WorkScope\Inc\Service\Front\Case;
+namespace WorkScope\Inc\Service\Service\Case;
 
 if (!defined("ABSPATH")) die();
 
-use WorkScope\Inc\Service\Front\Case\CaseAcfService;
+use WorkScope\Inc\Service\Service\Case\CaseAcfService;
 
 class CaseArchiveService
 {

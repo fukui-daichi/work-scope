@@ -1,6 +1,9 @@
 <?php
 
 use WorkScope\Inc\Utils;
+use WorkScope\Inc\Service\Service\Case\CaseArchiveService;
+
+$case_list = CaseArchiveService::get_case_list();
 
 $page_config = [
   "page_path" => "service",
@@ -123,50 +126,38 @@ Utils::get_component('header');
       <div class="intro">
         <h2 class="module-text-h2">CASE</h2>
       </div>
-      <ul class="case-list module-card-list">
-        <li>
-          <a href="#">
-            <figure>
-              <img src="/assets/images/front/dammy/img01.webp" alt="" width="242" height="161" decoding="async">
-            </figure>
-            <dl>
-              <dt>
-                <span class="tag">新規事業支援</span>
-                <time datetime="2023-10-15">2023.10.15</time>
-              </dt>
-              <dd>コンセプト・コミュニケーション設計から構築し、新規事業立ち上げを支援</dd>
-            </dl>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <figure>
-              <img src="/assets/images/front/dammy/img02.webp" alt="" width="600" height="400" decoding="async">
-            </figure>
-            <dl>
-              <dt>
-                <span class="tag">組織・⼈事支援</span>
-                <time datetime="2023-10-14">2023.10.14</time>
-              </dt>
-              <dd>課題解決につながる組織・⼈事戦略の策定を支援</dd>
-            </dl>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <figure>
-              <img src="/assets/images/front/dammy/img03.webp" alt="" width="600" height="400" decoding="async">
-            </figure>
-            <dl>
-              <dt>
-                <span class="tag">採用支援</span>
-                <time datetime="2023-10-13">2023.10.13</time>
-              </dt>
-              <dd>事業拡大に伴う、中途採用の体制構築をご支援</dd>
-            </dl>
-          </a>
-        </li>
-      </ul>
+      <?php if (!empty($case_list)) { ?>
+        <ul class="module-card-list">
+          <?php foreach ($case_list as $item) { ?>
+            <li>
+              <a
+                href="<?php echo $item['permalink']; ?>"
+                hx-get="<?php echo $item['permalink']; ?>"
+                hx-swap="outerHTML transition:true show:window:top"
+                hx-push-url="true"
+                hx-target="[data-hx-target]"
+                hx-select="[data-hx-target]">
+                <figure>
+                  <img src="<?php echo $item['thumbnail']['url']; ?>"
+                    alt="<?php echo $item['thumbnail']['alt']; ?>"
+                    width="<?php echo $item['thumbnail']['width']; ?>"
+                    height="<?php echo $item['thumbnail']['height']; ?>"
+                    decoding="async">
+                </figure>
+                <dl>
+                  <dt>
+                    <span class="category"><?php echo $item['category']; ?></span>
+                    <time datetime="<?php echo $item['date_iso']; ?>"><?php echo $item['date_display']; ?></time>
+                  </dt>
+                  <dd><?php echo $item['title']; ?></dd>
+                </dl>
+              </a>
+            </li>
+          <?php } ?>
+        </ul>
+      <?php } else { ?>
+        <p class="is-empty">現在、記事の投稿はありません。</p>
+      <?php } ?>
       <a href="/case" class="module-base-button" hx-get="/case" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">実績紹介をみる</span>

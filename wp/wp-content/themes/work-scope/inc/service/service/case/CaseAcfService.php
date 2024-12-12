@@ -1,6 +1,6 @@
 <?php
 
-namespace WorkScope\Inc\Service\Front\Case;
+namespace WorkScope\Inc\Service\Service\Case;
 
 if (!defined("ABSPATH")) die();
 
