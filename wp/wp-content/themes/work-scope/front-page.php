@@ -16,10 +16,10 @@ Utils::get_component('header');
     <div class="inner">
       <hgroup>
         <h1>
-          働く人たちが<br>
-          幸せになる社会へ
+          働く人の可能性を、<br>
+          最大限に。
         </h1>
-        <p lang="en" translate="no">THE WORLD WHERE WORKERS ARE HAPPY.</p>
+        <p lang="en" translate="no">MAXIMIZING HUMAN POTENTIAL AT WORK.</p>
       </hgroup>
       <div class="splide" role="group">
         <div class="splide__track">
@@ -48,12 +48,12 @@ Utils::get_component('header');
         <h2 class="module-text-h2">COMPANY</h2>
         <dl class="module-text-intro">
           <dt>
-            すべてのクライアントに<br>
-            課題解決策と成長を
+            すべての組織と人材に、<br>
+            最適な成長の道筋を
           </dt>
           <dd>
-            私たちは、ヒトとITのチカラで働く人たちを応援する企業です。働くすべての人を幸せにする支援を多角的に展開していきます。<br class="sp">
-            採用／人事制度／DX推進／システム導⼊／新規事業企画／業務改善などをご⽀援しています。
+            私たちは、人とテクノロジーの力で組織と人材の可能性を広げるプロフェッショナル集団です。<br class="sp">
+            採用、人事制度設計、DX推進、システム導入から新規事業支援まで、企業の持続的な成長をトータルでサポートします。
           </dd>
         </dl>
         <a href="/company" class="module-base-button" hx-get="/company" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
@@ -73,12 +73,11 @@ Utils::get_component('header');
         <h2 class="module-text-h2">SERVICE</h2>
         <dl class="module-text-intro">
           <dt>
-            あらゆる力を、<br class="sp">
-            進化のために。
+            組織の進化を、<br class="sp">
+            多角的に支援する。
           </dt>
           <dd>
-            Work Scopeが提供しているサービスはこちらからご覧ください。
-            多角的に対応しています。
+            Work Scopeは、組織と人材の課題に応じた最適なソリューションを提供します。
           </dd>
         </dl>
       </div>
@@ -92,7 +91,7 @@ Utils::get_component('header');
               <span class="en" lang="en" translate="no">HR SUPPORT</span>
               <span class="ja">組織・⼈事支援</span>
             </dt>
-            <dd>本質的な課題解決につながる組織・⼈事戦略の策定を支援</dd>
+            <dd>データに基づく戦略立案と、実効性の高い組織・人事制度の構築を支援</dd>
           </dl>
         </li>
         <li>
@@ -104,7 +103,7 @@ Utils::get_component('header');
               <span class="en" lang="en" translate="no">CAREER SUPPORT</span>
               <span class="ja">採用支援</span>
             </dt>
-            <dd>人材採用の戦略立案から実行までを含めたコンサルティング支援</dd>
+            <dd>採用戦略の策定から実行まで、企業の成長に必要な人材獲得を支援</dd>
           </dl>
         </li>
         <li>
@@ -116,7 +115,7 @@ Utils::get_component('header');
               <span class="en" lang="en" translate="no">BUSINESS SUPPORT</span>
               <span class="ja">新規事業支援</span>
             </dt>
-            <dd>コンセプト・プロダクト設計から構築、新規事業立ち上げを支援</dd>
+            <dd>市場分析からプロダクト設計、事業化までの一貫した新規事業支援</dd>
           </dl>
         </li>
       </ul>
@@ -142,11 +141,11 @@ Utils::get_component('header');
         <h2 class="module-text-h2">CASE</h2>
         <dl class="module-text-intro">
           <dt>
-            実績が証明する、<br class="sp">
-            確かな力。
+            実績が示す、<br class="sp">
+            確かな支援力。
           </dt>
           <dd>
-            Work Scopeの事例をご紹介。
+            Work Scopeが実現してきた変革の軌跡をご紹介します。
           </dd>
         </dl>
       </div>
@@ -241,8 +240,8 @@ Utils::get_component('header');
             メンバーを探しています。
           </dt>
           <dd>
-            私たちはミッション・価値観への共感を何よりも大切に考え、一緒に働くメンバーを探しています。<br>
-            ご興味をお持ちの方は、こちらから情報をご覧いただけます。
+            私たちは『働く』を変えていくという情熱を共有できる仲間を探しています。<br>
+            組織と人材の可能性を最大限に引き出す、そんな挑戦に共感いただける方はぜひご覧ください。
           </dd>
         </dl>
       </div>
