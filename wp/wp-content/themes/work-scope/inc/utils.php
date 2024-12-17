@@ -35,6 +35,23 @@ class Utils
   }
 
   /**
+   * ページテンプレートをレンダリングします
+   *
+   * @param string $view ビューファイルの名前
+   * @param array $vars ビューに渡す変数の配列
+   * @return void
+   */
+  public static function view(string $view, array $vars = []): void
+  {
+    $theme_dir = get_template_directory();
+
+    if (file_exists($theme_dir . "/{$view}.php")) {
+      extract($vars);
+      include $theme_dir . "/{$view}.php";
+    }
+  }
+
+  /**
    * ビューファイルをオプションの変数と共にインクルードします。
    *
    * @param string $view ビューファイルの名前（componentsディレクトリ以外の場合は'components/'を除いたパスを指定）
