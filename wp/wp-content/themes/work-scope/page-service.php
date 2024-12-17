@@ -9,6 +9,7 @@ $page_config = [
   "page_path" => "service",
   "title" => "事業内容",
   "title_en" => "SERVICE",
+  "description" => "企業の課題解決に向けた3つの中核サービス：組織・人事支援、採用支援、新規事業支援。各分野のプロフェッショナルが、お客様のビジネスの成長を支援します。",
 ];
 
 Utils::get_component('head', $page_config);

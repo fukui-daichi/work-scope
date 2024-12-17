@@ -25,6 +25,7 @@ class CaseArchiveService
       "page_path" => "case",
       "title" => "実績紹介",
       "title_en" => "CASE",
+      "description" => "Work Scopeが手がけた支援事例をご紹介。組織改革や採用支援、新規事業開発など、様々な企業の成長をサポートしてきた実績をお届けします。",
     ];
   }
 

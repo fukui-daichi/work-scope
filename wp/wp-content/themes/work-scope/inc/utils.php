@@ -53,22 +53,6 @@ class Utils
   }
 
   /**
-   * ページタイトルを生成します。
-   *
-   * @param string|null $title ページ固有のタイトル（オプション）
-   * @param string $siteName サイト名
-   * @param string $separator タイトルとサイト名の区切り文字
-   * @return string 生成されたタイトル
-   */
-  public static function get_page_title($title = null, string $siteName = 'Work Scope', string $separator = ' | '): string
-  {
-    if (isset($title) && $title !== '' && $title !== null) {
-      return $title . $separator . $siteName;
-    }
-    return $siteName;
-  }
-
-  /**
    * ページのOGタイプを決定して返します。
    *
    * @return string OGタイプ（'website'または'article'）

@@ -19,6 +19,7 @@ class NewsSingleService
 
     return [
       'title' => $news_data['title'],
+      "description" => $news_data['title'] . "｜Work Scopeからのお知らせです。",
     ];
   }
 

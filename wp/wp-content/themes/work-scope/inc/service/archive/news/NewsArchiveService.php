@@ -19,6 +19,7 @@ class NewsArchiveService
       "page_path" => "news",
       "title" => "お知らせ",
       "title_en" => "NEWS",
+      "description" => "Work Scopeからの最新情報をお届けします。サービスアップデートや業界動向、お役立ち情報など、企業の成長に関する情報を発信しています。",
     ];
   }
 

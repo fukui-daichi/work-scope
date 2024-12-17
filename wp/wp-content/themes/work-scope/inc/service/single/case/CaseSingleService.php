@@ -19,6 +19,7 @@ class CaseSingleService
 
     return [
       'title' => $case_data['title'],
+      "description" => $case_data['title'] . "の事例をご紹介。Work Scopeがどのようなアプローチで解決に導いたのか、具体的な成果とともにお伝えします。",
     ];
   }
 

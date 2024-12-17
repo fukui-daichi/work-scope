@@ -6,6 +6,7 @@ $page_config = [
   "page_path" => "company",
   "title" => "企業情報",
   "title_en" => "COMPANY",
+  "description" => "人と組織の可能性を追求するWork Scopeの企業情報をご紹介。私たちのミッション、価値観、そして目指す未来についてお伝えします。",
 ];
 
 Utils::get_component('head', $page_config);
@@ -163,7 +164,6 @@ Utils::get_component('header');
   </section>
 
 </main>
-
 <?php
 Utils::get_component('contact-induction');
 Utils::get_component('footer');
