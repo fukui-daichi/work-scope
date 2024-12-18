@@ -734,7 +734,7 @@ th {
   top: 0;
 }
 
-.module-base-button {
+.module-primary-button {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -743,7 +743,7 @@ th {
   font-size: 1.8rem;
   font-weight: 500;
 }
-.module-base-button .icon {
+.module-primary-button .icon {
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -753,7 +753,7 @@ th {
   color: #fff;
   transition: scale 0.2s;
 }
-.module-base-button .icon::after {
+.module-primary-button .icon::after {
   content: "";
   display: block;
   width: 1lh;
@@ -762,28 +762,29 @@ th {
   -webkit-mask: url(/assets/images/common/icon-arrow-right.svg) no-repeat center/contain;
           mask: url(/assets/images/common/icon-arrow-right.svg) no-repeat center/contain;
 }
-.module-base-button .text {
+.module-primary-button .text {
   transition: translate 0.2s;
 }
 @media (any-hover: hover) {
-  .module-base-button:hover .icon {
+  .module-primary-button:hover .icon {
     scale: 1.2;
   }
-  .module-base-button:hover .text {
+  .module-primary-button:hover .text {
     translate: 10%;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .module-base-button {
+  .module-primary-button {
     font-size: 3rem;
   }
 }
-.module-base-button.other-tab .icon::after {
+.module-primary-button.other-tab .icon::after {
   -webkit-mask: url(/assets/images/common/icon-other-tab.svg) no-repeat center/contain;
           mask: url(/assets/images/common/icon-other-tab.svg) no-repeat center/contain;
 }
 
-.module-other-tab-button {
+.module-secondary-button {
+  --bg-color: var(--color-primary);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -791,63 +792,41 @@ th {
   padding: 1.6rem 3.6rem;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color, #fff);
   font-size: 2.2rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
   transition: background-color 0.2s ease;
 }
-.module-other-tab-button::after {
+.module-secondary-button.other-tab {
+  --bg-color: #000;
+}
+.module-secondary-button.other-tab::after {
   content: "";
   display: block;
   width: 0.8lh;
   aspect-ratio: 1;
-  background-color: #fff;
+  background-color: var(--text-color, #fff);
   -webkit-mask: url(/assets/images/common/icon-other-tab.svg) no-repeat center/contain;
           mask: url(/assets/images/common/icon-other-tab.svg) no-repeat center/contain;
 }
-@media (any-hover: hover) {
-  .module-other-tab-button:hover {
-    background-color: color-mix(in srgb, #000 70%, transparent);
-  }
-}
-@media screen and (min-width: 0px) and (max-width: 768px) {
-  .module-other-tab-button {
-    padding: 2rem 6rem;
-    font-size: 2.8rem;
-  }
-}
-
-.module-contact-button {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 100vw;
-  padding: 1.6rem 3.6rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: var(--color-primary);
-  color: #fff;
-  font-size: 2.2rem;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-.module-contact-button::after {
+.module-secondary-button.contact::after {
   content: "";
   display: block;
   width: 1lh;
   aspect-ratio: 4/3;
-  background-color: #fff;
+  background-color: var(--text-color, #fff);
   -webkit-mask: url(/assets/images/common/icon-contact.svg) no-repeat center/contain;
           mask: url(/assets/images/common/icon-contact.svg) no-repeat center/contain;
 }
 @media (any-hover: hover) {
-  .module-contact-button:hover {
-    background-color: color-mix(in srgb, var(--color-primary) 70%, transparent);
+  .module-secondary-button:hover {
+    background-color: color-mix(in srgb, var(--bg-color) 70%, transparent);
   }
 }
 @media screen and (min-width: 0px) and (max-width: 768px) {
-  .module-contact-button {
+  .module-secondary-button {
     padding: 2rem 6rem;
     font-size: 2.8rem;
   }
@@ -857,13 +836,19 @@ input:not([type=radio]):not([type=checkbox]):not([type=submit]),
 textarea {
   --padding-block: 1rem;
   --padding-inline: 1.6rem;
-  border: 1px solid var(--gray);
-  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-gray) 60%, transparent);
+  border-radius: 0.8rem;
   padding: var(--padding-block) var(--padding-inline);
   width: 100%;
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.5;
-  background-color: #fff;
+}
+input:not([type=radio]):not([type=checkbox]):not([type=submit])::-moz-placeholder, textarea::-moz-placeholder {
+  color: var(--color-gray);
+}
+input:not([type=radio]):not([type=checkbox]):not([type=submit])::placeholder,
+textarea::placeholder {
+  color: var(--color-gray);
 }
 
 textarea {
@@ -1252,6 +1237,7 @@ textarea {
   --color-primary: #0553dd;
   --color-bg: #f6f6f6;
   --color-gray: #c2c2c2;
+  --color-error: #ec0000;
   --leading-trim: calc((1em - 1lh) / 2);
   --header-height: 10rem;
   --content-padding-inline: 4rem;
@@ -1288,7 +1274,8 @@ body {
   scroll-margin-top: var(--header-height);
 }
 
-[id] {
+[id],
+[hx-swap] {
   scroll-margin-top: var(--header-height);
 }
 
@@ -1381,7 +1368,7 @@ section > .inner {
   grid-template-columns: 1fr 48rem;
   gap: 8rem;
 }
-.front-page section.company > .inner .intro .module-base-button {
+.front-page section.company > .inner .intro .module-primary-button {
   margin-top: 4rem;
 }
 .front-page section.company > .inner figure {
@@ -1437,14 +1424,14 @@ section > .inner {
   font-size: 1.8rem;
   line-height: 1.6;
 }
-.front-page section.service > .inner .module-base-button {
+.front-page section.service > .inner .module-primary-button {
   margin-top: 4rem;
   margin-inline: auto 0;
 }
 .front-page section.case > .inner .module-card-list {
   margin-top: 6rem;
 }
-.front-page section.case > .inner .module-base-button {
+.front-page section.case > .inner .module-primary-button {
   margin-top: 4rem;
   margin-inline: auto 0;
 }
@@ -1509,7 +1496,7 @@ section > .inner {
   margin-top: 4rem;
   font-size: 2rem;
 }
-.front-page section.news > .inner .module-base-button {
+.front-page section.news > .inner .module-primary-button {
   margin-top: 4rem;
   margin-inline: auto 0;
 }
@@ -1542,10 +1529,10 @@ section > .inner {
 .front-page section.career > .inner .intro dl {
   color: #fff;
 }
-.front-page section.career > .inner .module-base-button {
+.front-page section.career > .inner .module-primary-button {
   margin-top: 4rem;
 }
-.front-page section.career > .inner .module-base-button .text {
+.front-page section.career > .inner .module-primary-button .text {
   color: #fff;
 }
 .front-page .module-image-block {
@@ -1791,7 +1778,7 @@ section > .inner {
 .service-page section.case > .inner .module-card-list {
   margin-top: 6rem;
 }
-.service-page section.case > .inner .module-base-button {
+.service-page section.case > .inner .module-primary-button {
   margin-top: 4rem;
   margin-inline: auto 0;
 }
@@ -1896,7 +1883,7 @@ section > .inner {
     font-size: 3.2rem;
   }
 }
-.single-news-page section.single-news > .inner .module-base-button {
+.single-news-page section.single-news > .inner .module-primary-button {
   margin-top: 4rem;
   margin-inline: auto;
 }
@@ -1923,16 +1910,165 @@ section > .inner {
   transform: translateY(0);
 }
 
-.single-case-page section.single-case > .inner .module-base-button {
+.single-case-page section.single-case > .inner .module-primary-button {
   margin-top: 4rem;
   margin-inline: auto;
 }
 
+.contact-page section form {
+  margin-top: 4rem;
+  padding: 5.6rem;
+  border-radius: 2rem;
+  background-color: #fff;
+  font-size: 2rem;
+}
+.contact-page section.contact-input > .inner .intro {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.contact-page section.contact-input > .inner form .form-list > li + li {
+  margin-top: 4rem;
+}
+.contact-page section.contact-input > .inner form .form-list > li dl dt {
+  display: flex;
+  gap: 0.6rem;
+}
+.contact-page section.contact-input > .inner form .form-list > li dl dt strong {
+  color: var(--color-error);
+  font-weight: 300;
+}
+.contact-page section.contact-input > .inner form .form-list > li dl dd {
+  margin-top: 1.6rem;
+}
+.contact-page section.contact-input > .inner form .form-list > li dl dd label + label {
+  margin-top: 2rem;
+}
+.contact-page section.contact-input > .inner form .agreement {
+  margin-top: 4rem;
+  margin-inline: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.contact-page section.contact-input > .inner form .agreement .checkbox .text > a {
+  color: #007cff;
+  text-decoration: underline;
+}
+.contact-page section.contact-input > .inner form .form-error {
+  position: relative;
+  line-height: 1.5;
+}
+.contact-page section.contact-input > .inner form .form-error:not(:empty) {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  color: color-mix(in srgb, var(--color-error) 80%, transparent);
+}
+.contact-page section.contact-input > .inner form .form-error:not(:empty)::before {
+  content: "";
+  display: block;
+  width: 1.4ic;
+  height: 1.4ic;
+  aspect-ratio: 1;
+  background: color-mix(in srgb, var(--color-error) 80%, transparent);
+  -webkit-mask: url(../images/common/icon-cross.svg) no-repeat center center/80% 80%;
+          mask: url(../images/common/icon-cross.svg) no-repeat center center/80% 80%;
+}
+.contact-page section.contact-confirm > .inner .intro {
+  padding-top: 4rem;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.contact-page section.contact-confirm > .inner form .confirm-list > li {
+  padding-block: 2.8rem;
+}
+.contact-page section.contact-confirm > .inner form .confirm-list > li + li {
+  border-top: 1px solid var(--color-gray);
+}
+.contact-page section.contact-confirm > .inner form .confirm-list > li:first-child {
+  padding-top: 0;
+}
+.contact-page section.contact-confirm > .inner form .confirm-list > li:last-of-type {
+  border-bottom: 1px solid var(--color-gray);
+}
+.contact-page section.contact-confirm > .inner form .confirm-list > li dl dd {
+  margin-top: 1.6rem;
+  white-space: pre-wrap;
+}
+.contact-page section.contact-confirm > .inner form .button-wrapper [value=back] {
+  --bg-color: #000;
+}
+.contact-page section.contact-thanks > .inner hgroup {
+  margin-inline: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.contact-page section.contact-thanks > .inner hgroup h2 {
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.contact-page section.contact-thanks > .inner hgroup p {
+  margin-top: 3.2rem;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.contact-page section .button-wrapper {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .contact-page section form {
+    padding: 5.6rem 4rem;
+    font-size: 3.2rem;
+  }
+  .contact-page section.contact-input > .inner .intro {
+    font-size: 3.2rem;
+  }
+  .contact-page section.contact-input > .inner form .form-list > li + li {
+    margin-top: 6.4rem;
+  }
+  .contact-page section.contact-input > .inner form .form-list > li dl dd {
+    margin-top: 3.2rem;
+  }
+  .contact-page section.contact-input > .inner form .form-list > li dl dd label + label {
+    margin-top: 4rem;
+  }
+  .contact-page section.contact-input > .inner form .agreement {
+    margin-top: 4rem;
+    margin-inline: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .contact-page section.contact-input > .inner form .agreement .checkbox .text {
+    font-size: 2.8rem;
+  }
+  .contact-page section.contact-confirm > .inner .intro {
+    font-size: 3.2rem;
+  }
+  .contact-page section.contact-confirm > .inner form .confirm-list > li {
+    padding-block: 4rem;
+  }
+  .contact-page section.contact-confirm > .inner form .confirm-list > li dl dd {
+    margin-top: 2.4rem;
+  }
+  .contact-page section.contact-thanks > .inner hgroup h2 {
+    font-size: 4.4rem;
+  }
+  .contact-page section.contact-thanks > .inner hgroup p {
+    font-size: 3.2rem;
+  }
+}
 .not-found-page .not-found h2 {
   font-size: 2rem;
   line-height: 1.8;
 }
-.not-found-page .not-found .module-base-button {
+.not-found-page .not-found .module-primary-button {
   margin-inline: auto;
   margin-top: 6rem;
 }
@@ -2227,10 +2363,10 @@ section > .inner {
   font-size: 1.8rem;
   line-height: 1.6;
 }
-.contact-induction > .inner .contact-induction-list li .module-base-button {
+.contact-induction > .inner .contact-induction-list li .module-primary-button {
   margin-top: 4rem;
 }
-.contact-induction > .inner .contact-induction-list li .module-base-button .icon {
+.contact-induction > .inner .contact-induction-list li .module-primary-button .icon {
   background-color: #fff;
   color: var(--color-primary);
 }
@@ -2296,6 +2432,90 @@ section > .inner {
   }
   .lower-header > .inner hgroup > p {
     font-size: 3.2rem;
+  }
+}
+label.radio {
+  display: grid;
+  grid-template-columns: 1.2ic auto;
+  gap: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  line-height: 1.5;
+}
+label.radio .icon {
+  position: relative;
+  margin-top: 0.1lh;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-gray);
+}
+label.radio .icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 50%;
+  width: 72%;
+  aspect-ratio: 1;
+  background-color: var(--color-primary);
+  scale: 0;
+  transition: scale 0.2s;
+}
+label.radio input:checked + .icon::after {
+  scale: 1;
+}
+
+label.checkbox {
+  display: grid;
+  grid-template-columns: 1.4ic auto;
+  gap: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  line-height: 1.5;
+}
+label.checkbox .icon {
+  position: relative;
+  display: block;
+  margin-top: 0.05lh;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-gray);
+  border-radius: 0.2rem;
+  transition: all 0.2s ease-in-out;
+}
+label.checkbox .icon::after {
+  content: "";
+  position: absolute;
+  top: 64%;
+  left: 64%;
+  translate: -50% -50%;
+  width: 72%;
+  aspect-ratio: 2/1;
+  border-left: 0.4rem solid #fff;
+  border-bottom: 0.4rem solid #fff;
+  rotate: -90deg;
+  scale: 0;
+  transform-origin: left;
+  transition: rotate 0.2s ease-in-out, scale 0.2s ease-in-out;
+}
+label.checkbox input:checked + .icon {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+label.checkbox input:checked + .icon::after {
+  scale: 1;
+  rotate: -45deg;
+}
+@media (any-hover: hover) {
+  label.checkbox:hover .icon {
+    border-color: var(--color-primary);
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  label.checkbox {
+    grid-template-columns: 1.2ic auto;
   }
 }
 

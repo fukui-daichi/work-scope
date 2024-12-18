@@ -72,6 +72,7 @@ class ContactMailService
   private static function get_mail_content(string $template, array $data): string
   {
     ob_start();
+    extract(['data' => $data]);
     include get_template_directory() . "/inc/mail-templates/{$template}.php";
     return ob_get_clean();
   }

@@ -56,7 +56,7 @@ Utils::get_component('header');
             採用、人事制度設計、DX推進、システム導入から新規事業支援まで、企業の持続的な成長をトータルでサポートします。
           </dd>
         </dl>
-        <a href="/company" class="module-base-button" hx-get="/company" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
+        <a href="/company" class="module-primary-button" hx-get="/company" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
           <span class="icon"></span>
           <span class="text">企業情報をみる</span>
         </a>
@@ -119,7 +119,7 @@ Utils::get_component('header');
           </dl>
         </li>
       </ul>
-      <a href="/service" class="module-base-button" hx-get="/service" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
+      <a href="/service" class="module-primary-button" hx-get="/service" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">事業内容をみる</span>
       </a>
@@ -181,7 +181,7 @@ Utils::get_component('header');
       <?php } else { ?>
         <p class="is-empty">現在、記事の投稿はありません。</p>
       <?php } ?>
-      <a href="/case" class="module-base-button" hx-get="/case" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
+      <a href="/case" class="module-primary-button" hx-get="/case" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">実績紹介をみる</span>
       </a>
@@ -223,7 +223,7 @@ Utils::get_component('header');
           <p class="is-empty">現在、記事の投稿はありません。</p>
         <?php } ?>
       </div>
-      <a href="/news" class="module-base-button" hx-get="/news" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
+      <a href="/news" class="module-primary-button" hx-get="/news" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">一覧をみる</span>
       </a>
@@ -245,7 +245,7 @@ Utils::get_component('header');
           </dd>
         </dl>
       </div>
-      <a href="#" class="module-base-button other-tab">
+      <a href="#" class="module-primary-button other-tab">
         <span class="icon"></span>
         <span class="text">採用情報について</span>
       </a>

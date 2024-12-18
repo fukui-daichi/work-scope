@@ -7,11 +7,13 @@ use WorkScope\Inc\Utils;
 class ContactService
 {
   private const REQUIRED_FIELDS = [
-    'company',
+    'subject',
+    'corporate-name',
     'name',
     'email',
     'tel',
-    'message'
+    'message',
+    'agreement',
   ];
 
   /**

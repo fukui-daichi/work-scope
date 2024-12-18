@@ -1,0 +1,61 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+label.checkbox {
+  display: grid;
+  grid-template-columns: 1.4ic auto;
+  gap: 1rem;
+  width: fit-content;
+  cursor: pointer;
+  line-height: 1.5;
+
+  .icon {
+    position: relative;
+    display: block;
+    margin-top: 0.05lh;
+    aspect-ratio: 1;
+    border: 1px solid var(--color-gray);
+    border-radius: 0.2rem;
+    transition: all 0.2s ease-in-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 64%;
+      left: 64%;
+      translate: -50% -50%;
+      width: 72%;
+      aspect-ratio: 2/1;
+      border-left: 0.4rem solid #fff;
+      border-bottom: 0.4rem solid #fff;
+      rotate: -90deg;
+      scale: 0;
+      transform-origin: left;
+      transition: rotate 0.2s ease-in-out, scale 0.2s ease-in-out;
+    }
+  }
+
+  input:checked + .icon {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+
+    &::after {
+      scale: 1;
+      rotate: -45deg;
+    }
+  }
+
+  &:hover {
+    @media (any-hover: hover) {
+      .icon {
+        border-color: var(--color-primary);
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+  label.checkbox {
+    grid-template-columns: 1.2ic auto;
+  }
+}

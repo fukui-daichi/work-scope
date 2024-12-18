@@ -1,0 +1,255 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.contact-page {
+  section {
+    form {
+      margin-top: 4rem;
+      padding: 5.6rem;
+      border-radius: 2rem;
+      background-color: #fff;
+      font-size: 2rem;
+    }
+
+    &.contact-input {
+      > .inner {
+        .intro {
+          font-size: 2rem;
+          line-height: 1.5;
+        }
+
+        form {
+          .form-list {
+            > li {
+              & + li {
+                margin-top: 4rem;
+              }
+
+              dl {
+                dt {
+                  display: flex;
+                  gap: 0.6rem;
+
+                  strong {
+                    color: var(--color-error);
+                    font-weight: 300;
+                  }
+                }
+
+                dd {
+                  margin-top: 1.6rem;
+
+                  label {
+                    & + label {
+                      margin-top: 2rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .agreement {
+            margin-top: 4rem;
+            margin-inline: auto;
+            width: fit-content;
+
+            .checkbox {
+              .text {
+                > a {
+                  color: #007cff;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+
+          .form-error {
+            position: relative;
+            line-height: 1.5;
+
+            &:not(:empty) {
+              display: flex;
+              gap: 1rem;
+              margin-top: 2rem;
+              color: color-mix(in srgb, var(--color-error) 80%, transparent);
+
+              &::before {
+                content: "";
+                display: block;
+                width: 1.4ic;
+                height: 1.4ic;
+                aspect-ratio: 1;
+                background: color-mix(in srgb, var(--color-error) 80%, transparent);
+                mask: url(../images/common/icon-cross.svg) no-repeat center center / 80% 80%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.contact-confirm {
+      > .inner {
+        .intro {
+          padding-top: 4rem;
+          font-size: 2rem;
+          line-height: 1.5;
+        }
+
+        form {
+          .confirm-list {
+            > li {
+              padding-block: 2.8rem;
+
+              & + li {
+                border-top: 1px solid var(--color-gray);
+              }
+
+              &:first-child {
+                padding-top: 0;
+              }
+
+              &:last-of-type {
+                border-bottom: 1px solid var(--color-gray);
+              }
+
+              dl {
+                dd {
+                  margin-top: 1.6rem;
+                  white-space: pre-wrap;
+                }
+              }
+            }
+          }
+
+          .button-wrapper {
+            [value="back"] {
+              --bg-color: #000;
+            }
+          }
+        }
+      }
+    }
+
+    &.contact-thanks {
+      > .inner {
+        hgroup {
+          margin-inline: auto;
+          width: fit-content;
+
+          h2 {
+            text-align: center;
+            font-size: 3.6rem;
+            font-weight: 600;
+            line-height: 1.5;
+          }
+
+          p {
+            margin-top: 3.2rem;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+
+    .button-wrapper {
+      margin-top: 6rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+    }
+  }
+}
+
+@include f.mq(sp) {
+  .contact-page {
+    section {
+      form {
+        padding: 5.6rem 4rem;
+        font-size: 3.2rem;
+      }
+
+      &.contact-input {
+        > .inner {
+          .intro {
+            font-size: 3.2rem;
+          }
+
+          form {
+            .form-list {
+              > li {
+                & + li {
+                  margin-top: 6.4rem;
+                }
+
+                dl {
+                  dd {
+                    margin-top: 3.2rem;
+
+                    label {
+                      & + label {
+                        margin-top: 4rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .agreement {
+              margin-top: 4rem;
+              margin-inline: auto;
+              width: fit-content;
+
+              .checkbox {
+                .text {
+                  font-size: 2.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.contact-confirm {
+        > .inner {
+          .intro {
+            font-size: 3.2rem;
+          }
+
+          form {
+            .confirm-list {
+              > li {
+                padding-block: 4rem;
+
+                dl {
+                  dd {
+                    margin-top: 2.4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.contact-thanks {
+        > .inner {
+          hgroup {
+            h2 {
+              font-size: 4.4rem;
+            }
+
+            p {
+              font-size: 3.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,7 +18,8 @@ return [
 
   // フィールドの定義
   "fields" => [
-    "company",
+    "subject",
+    "corporate-name",
     "name",
     "email",
     "tel",

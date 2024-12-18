@@ -24,7 +24,7 @@ Utils::get_component('header');
         <hr>
         <div class="body-text"><?php echo $news_data['body_text'] ?></div>
       </article>
-      <a href="/news" class="module-base-button" hx-get="/news" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
+      <a href="/news" class="module-primary-button" hx-get="/news" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">お知らせ一覧に戻る</span>
       </a>

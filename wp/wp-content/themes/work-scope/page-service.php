@@ -157,7 +157,7 @@ Utils::get_component('header');
       <?php } else { ?>
         <p class="is-empty">現在、記事の投稿はありません。</p>
       <?php } ?>
-      <a href="/case" class="module-base-button" hx-get="/case" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
+      <a href="/case" class="module-primary-button" hx-get="/case" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <span class="icon"></span>
         <span class="text">実績紹介をみる</span>
       </a>

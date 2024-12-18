@@ -1,7 +1,7 @@
 @use "../../base/shortcut-functions" as f;
 @use "./hover" as hover;
 
-.module-base-button {
+.module-primary-button {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -58,57 +58,45 @@
   }
 }
 
-.module-other-tab-button {
+.module-secondary-button {
+  --bg-color: var(--color-primary);
   display: flex;
   align-items: center;
   gap: 1rem;
   border-radius: 100vw;
   padding: 1.6rem 3.6rem;
   width: fit-content;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color, #fff);
   font-size: 2.2rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
 
-  &::after {
-    content: "";
-    display: block;
-    width: 0.8lh;
-    aspect-ratio: 1;
-    background-color: #fff;
-    mask: url(/assets/images/common/icon-other-tab.svg) no-repeat center / contain;
+  &.other-tab {
+    --bg-color: #000;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0.8lh;
+      aspect-ratio: 1;
+      background-color: var(--text-color, #fff);
+      mask: url(/assets/images/common/icon-other-tab.svg) no-repeat center / contain;
+    }
   }
 
-  @include hover.hover-bg-opacity(#000);
-
-  @include f.mq(sp) {
-    padding: 2rem 6rem;
-    font-size: 2.8rem;
-  }
-}
-
-.module-contact-button {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 100vw;
-  padding: 1.6rem 3.6rem;
-  width: fit-content;
-  background-color: var(--color-primary);
-  color: #fff;
-  font-size: 2.2rem;
-  font-weight: 600;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 1lh;
-    aspect-ratio: 4/3;
-    background-color: #fff;
-    mask: url(/assets/images/common/icon-contact.svg) no-repeat center / contain;
+  &.contact {
+    &::after {
+      content: "";
+      display: block;
+      width: 1lh;
+      aspect-ratio: 4/3;
+      background-color: var(--text-color, #fff);
+      mask: url(/assets/images/common/icon-contact.svg) no-repeat center / contain;
+    }
   }
 
-  @include hover.hover-bg-opacity(var(--color-primary));
+  @include hover.hover-bg-opacity(var(--bg-color));
 
   @include f.mq(sp) {
     padding: 2rem 6rem;

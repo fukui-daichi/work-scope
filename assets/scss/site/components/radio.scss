@@ -1,0 +1,43 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+label.radio {
+  display: grid;
+  grid-template-columns: 1.2ic auto;
+  gap: 1rem;
+  width: fit-content;
+  cursor: pointer;
+  line-height: 1.5;
+
+  .icon {
+    position: relative;
+    margin-top: 0.1lh;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    border: 1px solid var(--color-gray);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      border-radius: 50%;
+      width: 72%;
+      aspect-ratio: 1;
+      background-color: var(--color-primary);
+      scale: 0;
+      transition: scale 0.2s;
+    }
+  }
+
+  input:checked {
+    + .icon {
+      &::after {
+        scale: 1;
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+}

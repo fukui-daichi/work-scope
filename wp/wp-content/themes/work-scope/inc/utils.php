@@ -35,6 +35,19 @@ class Utils
   }
 
   /**
+   * 配列やオブジェクトから値を安全に取得し、HTMLエスケープして返します
+   *
+   * @param array|object $o 取得元の配列またはオブジェクト
+   * @param string|int $k キーまたはプロパティ名
+   * @param mixed $d キーが存在しない場合のデフォルト値
+   * @return string エスケープされた文字列
+   */
+  public static function get_escape_el(mixed $o, string|int $k, mixed $d = ''): string
+  {
+    return self::h(self::el($o, $k, $d));
+  }
+
+  /**
    * ページテンプレートをレンダリングします
    *
    * @param string $view ビューファイルの名前

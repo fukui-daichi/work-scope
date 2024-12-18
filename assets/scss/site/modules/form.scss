@@ -5,13 +5,16 @@ input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 textarea {
   --padding-block: 1rem;
   --padding-inline: 1.6rem;
-  border: 1px solid var(--gray);
-  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-gray) 60%, transparent);
+  border-radius: 0.8rem;
   padding: var(--padding-block) var(--padding-inline);
   width: 100%;
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.5;
-  background-color: #fff;
+
+  &::placeholder {
+    color: var(--color-gray);
+  }
 }
 
 textarea {

@@ -25,8 +25,8 @@
           <li><a href="/case" hx-get="/case" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">実績紹介</a></li>
           <li><a href="/news" hx-get="/news" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">お知らせ</a></li>
           <li class="buttons">
-            <a href="#" class="module-other-tab-button">採用情報</a>
-            <a href="/contact" class="module-contact-button" hx-get="/contact" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">お問い合わせ</a>
+            <a href="#" class="module-secondary-button other-tab">採用情報</a>
+            <a href="/contact" class="module-secondary-button contact" hx-get="/contact" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">お問い合わせ</a>
           </li>
         </ul>
       </div>
