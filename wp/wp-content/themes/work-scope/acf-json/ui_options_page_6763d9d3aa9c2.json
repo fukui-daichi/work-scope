@@ -1,0 +1,26 @@
+{
+    "key": "ui_options_page_6763d9d3aa9c2",
+    "title": "サイトオプション",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "サイトオプション",
+    "menu_slug": "site_option",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": 30,
+    "redirect": 0,
+    "description": "サイトオプションの説明",
+    "menu_icon": {
+        "type": "dashicons",
+        "value": "dashicons-admin-site-alt3"
+    },
+    "update_button": "更新",
+    "updated_message": "オプションを更新しました",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1734597546
+}

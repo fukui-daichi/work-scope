@@ -1,10 +1,14 @@
 <?php
 
 use WorkScope\Inc\Utils;
+use WorkScope\Inc\Service\Common\CommonAcfService;
+
+$site_options = CommonAcfService::get_site_options();
+$base_color = $site_options['base_color'];
 ?>
 
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" style="--color-primary: <?php echo $base_color; ?>;">
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/<?php echo Utils::get_og_type(); ?>#">
   <meta charset="UTF-8">
