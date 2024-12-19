@@ -129,7 +129,7 @@ Utils::get_component('header');
             <dd>
               <address>
                 〒000-0000<br>
-                東京都渋谷区〇〇町 0-00-0<br>
+                大阪府大阪市〇〇区 0-00-0<br>
                 テンプレートビル3F<br>
               </address>
             </dd>

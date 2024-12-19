@@ -1,0 +1,94 @@
+@use "../../base/shortcut-functions" as f;
+@use "../modules" as modules;
+
+.privacy-policy-page {
+  section {
+    &.privacy-policy {
+      > .inner {
+        .intro {
+          font-size: 2rem;
+          line-height: 1.5;
+        }
+
+        .agreement-list {
+          margin-top: 6rem;
+
+          > li {
+            line-height: 1.5;
+
+            & + li {
+              margin-top: 4.8rem;
+            }
+
+            dl {
+              dt {
+                font-size: 2.6rem;
+              }
+
+              dd {
+                margin-top: 1.2rem;
+                font-size: 2rem;
+              }
+            }
+          }
+        }
+
+        .contact {
+          margin-top: 6rem;
+          line-height: 1.5;
+
+          dt {
+            font-size: 2.6rem;
+          }
+
+          dd {
+            margin-top: 1.2rem;
+            font-size: 2rem;
+
+            address {
+              margin-block: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include f.mq(sp) {
+  .privacy-policy-page {
+    section {
+      &.privacy-policy {
+        > .inner {
+          .intro {
+            font-size: 3.2rem;
+          }
+
+          .agreement-list {
+            > li {
+              dl {
+                dt {
+                  font-size: 3.8rem;
+                }
+
+                dd {
+                  font-size: 3.2rem;
+                }
+              }
+            }
+          }
+
+          .contact {
+            dt {
+              font-size: 3.8rem;
+            }
+
+            dd {
+              font-size: 3.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

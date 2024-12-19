@@ -4,7 +4,6 @@ import { isCurrentPage, isMobile } from "../../utils/script.js";
 
 export default () => {
   if (isCurrentPage("/case")) {
-    console.log("case");
   }
 
   if (isCurrentPage("/case")) {

@@ -8,7 +8,6 @@
   --color-gray: #c2c2c2;
   --color-error: #ec0000;
 
-  --leading-trim: calc((1em - 1lh) / 2);
   --header-height: 10rem;
   --content-padding-inline: 4rem;
   --content-width: 120rem;
@@ -23,8 +22,6 @@
 html {
   @include f.rem-base-font-size;
   font-family: var(--font-noto-sans);
-  // font-feature-settings: "palt";
-  // scroll-behavior: smooth;
 }
 
 body {
@@ -73,6 +70,11 @@ a[href*="tel"] {
   @include f.mq(sp) {
     pointer-events: revert;
   }
+}
+
+a[href*="mailto"] {
+  color: #0553dd;
+  text-decoration: underline;
 }
 
 section {

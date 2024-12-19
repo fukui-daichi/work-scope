@@ -4,12 +4,10 @@ import { isCurrentPage, isMobile } from "../../utils/script.js";
 
 export default () => {
   if (isCurrentPage("/company")) {
-    console.log("company");
   }
 
   document.addEventListener("htmx:afterSwap", () => {
     if (isCurrentPage("/company")) {
-      console.log("company");
     }
   });
 };
