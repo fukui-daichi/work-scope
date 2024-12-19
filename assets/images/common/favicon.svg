@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <style>
+    .cls-1 {
+      fill: none;
+    }
+
+    .cls-2 {
+      opacity: .8;
+    }
+
+    .cls-2, .cls-3 {
+      fill: var(--color-primary);
+    }
+
+    .cls-3 {
+      opacity: .4;
+    }
+  </style>
+  <g>
+    <g>
+      <circle class="cls-2" cx="4.83" cy="8" r="4.83"/>
+      <circle class="cls-3" cx="11.17" cy="8" r="4.83"/>
+    </g>
+    <rect class="cls-1" width="16" height="16"/>
+  </g>
+</svg>

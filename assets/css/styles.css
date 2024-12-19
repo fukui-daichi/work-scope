@@ -1325,7 +1325,7 @@ a[href*=tel] {
 }
 
 a[href*=mailto] {
-  color: #0553dd;
+  color: #007cff;
   text-decoration: underline;
 }
 
