@@ -78,7 +78,7 @@ Utils::get_component('header');
                 <label for="tel">ご連絡先電話番号</label>
               </dt>
               <dd>
-                <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="例）000-1234-5678" pattern="[0-9-]+" title="「ご連絡先電話番号」は数字とハイフンのみで入力してください。" value="<?php echo Utils::get_escape_el($data, "tel"); ?>">
+                <input id="tel" type="tel" name="tel" placeholder="例）000-1234-5678" pattern="[0-9-]+" title="「ご連絡先電話番号」は数字とハイフンのみで入力してください。" value="<?php echo Utils::get_escape_el($data, "tel"); ?>">
                 <p class="form-error"><?php if (!empty($errors['tel'])) echo $errors['tel']; ?></p>
               </dd>
             </dl>

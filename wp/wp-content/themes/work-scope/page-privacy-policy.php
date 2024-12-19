@@ -58,7 +58,7 @@ Utils::get_component('header');
         <dd>
           本ポリシーに関するお問い合わせは、<br class="sp" aria-hidden="true">下記の窓口までお願いいたします。
           <address>
-            住所：〒000-0000大阪府大阪市〇〇区 <br class="sp" aria-hidden="true">0-00-0テンプレートビル8F<br>
+            住所：〒000-0000大阪府大阪市〇〇区 <br class="sp" aria-hidden="true">0-00-0 テンプレートビル8F<br>
             社名：Work Scope<br>
             Eメールアドレス：<a href="mailto:info@sample.co.jp">info@sample.co.jp</a>
           </address>

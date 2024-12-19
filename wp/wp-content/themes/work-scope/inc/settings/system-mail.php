@@ -2,5 +2,5 @@
 
 return [
   "from" => "fukui@aluco.jp",
-  "name" => "なまえ"
+  "name" => "株式会社Work Scope"
 ];
