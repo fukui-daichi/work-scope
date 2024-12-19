@@ -134,15 +134,27 @@ const setupBeforeUnloadHandler = (form) => {
     input.addEventListener("change", updateFormState);
   });
 
-  // ページ離脱時の処理
-  window.addEventListener("beforeunload", (event) => {
+  // beforeunloadハンドラーを関数として定義
+  const beforeUnloadHandler = (event) => {
     if (isFormDirty) {
       const message = "入力内容が保存されていません。このページを離れてもよろしいですか？";
       event.preventDefault();
       event.returnValue = message;
       return message;
     }
-  });
+  };
+
+  // イベントリスナーを追加
+  window.addEventListener("beforeunload", beforeUnloadHandler);
+
+  // htmx:beforeSwapイベントでクリーンアップ
+  document.addEventListener(
+    "htmx:beforeSwap",
+    () => {
+      window.removeEventListener("beforeunload", beforeUnloadHandler);
+    },
+    { once: true }
+  );
 };
 
 /**
