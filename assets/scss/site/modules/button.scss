@@ -1,6 +1,19 @@
 @use "../../base/shortcut-functions" as f;
 @use "./hover" as hover;
 
+button {
+  &[aria-disabled="true"] {
+    filter: brightness(0.5);
+    cursor: not-allowed;
+    transition: filter 0.2s, opacity 0.2s;
+  }
+
+  &[aria-disabled="false"] {
+    filter: initial;
+    cursor: initial;
+  }
+}
+
 .module-primary-button {
   display: flex;
   align-items: center;

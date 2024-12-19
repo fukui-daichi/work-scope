@@ -734,6 +734,16 @@ th {
   top: 0;
 }
 
+button[aria-disabled=true] {
+  filter: brightness(0.5);
+  cursor: not-allowed;
+  transition: filter 0.2s, opacity 0.2s;
+}
+button[aria-disabled=false] {
+  filter: initial;
+  cursor: initial;
+}
+
 .module-primary-button {
   display: flex;
   align-items: center;
@@ -1994,9 +2004,6 @@ section > .inner {
   margin-top: 1.6rem;
   white-space: pre-wrap;
 }
-.contact-page section.contact-confirm > .inner form .button-wrapper [value=back] {
-  --bg-color: #000;
-}
 .contact-page section.contact-thanks > .inner hgroup {
   margin-inline: auto;
   width: -moz-fit-content;
@@ -2020,6 +2027,9 @@ section > .inner {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2.4rem;
+}
+.contact-page section .button-wrapper [value=back] {
+  --bg-color: #000;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px) {

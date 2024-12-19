@@ -17,7 +17,7 @@ Utils::get_component('header');
         お問い合わせ内容の確認後、担当者よりご連絡させていただきます。<br>
         返信には数日かかる場合もございますので、あらかじめご了承くださいませ。
       </p>
-      <form id="hx-show" novalidate hx-post="/contact/confirm/" hx-swap="outerHTML transition:true show:#hx-show:top" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
+      <form id="hx-show" novalidate data-target="form-input" hx-post="/contact/confirm/" hx-swap="outerHTML transition:true show:#hx-show:top" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
         <ul class="form-list">
           <li>
             <dl>
@@ -43,7 +43,7 @@ Utils::get_component('header');
                 <strong>*</strong>
               </dt>
               <dd>
-                <input id="corporate-name" type="text" name="corporate-name" placeholder="例）株式会社サンプル" required aria-required="true" value="<?php echo Utils::get_escape_el($data, "corporate-name"); ?>">
+                <input id="corporate-name" type="text" name="corporate-name" placeholder="例）株式会社サンプル" autocomplete="organization" required aria-required="true" data-error-message="「法人名・団体名」が未入力です。" value="<?php echo Utils::get_escape_el($data, "corporate-name"); ?>">
                 <p class="form-error"><?php if (!empty($errors['corporate-name'])) echo $errors['corporate-name']; ?></p>
               </dd>
             </dl>
@@ -55,7 +55,7 @@ Utils::get_component('header');
                 <strong>*</strong>
               </dt>
               <dd>
-                <input id="name" type="text" name="name" placeholder="例）山田太郎" required aria-required="true" value="<?php echo Utils::get_escape_el($data, "name"); ?>">
+                <input id="name" type="text" name="name" placeholder="例）山田太郎" autocomplete="name" required aria-required="true" data-error-message="「お名前」が未入力です。" value="<?php echo Utils::get_escape_el($data, "name"); ?>">
                 <p class="form-error"><?php if (!empty($errors['name'])) echo $errors['name']; ?></p>
               </dd>
             </dl>
@@ -67,7 +67,7 @@ Utils::get_component('header');
                 <strong>*</strong>
               </dt>
               <dd>
-                <input id="email" type="email" name="email" placeholder="例）info@sample.co.jp" required aria-required="true" value="<?php echo Utils::get_escape_el($data, "email"); ?>">
+                <input id="email" type="email" name="email" placeholder="例）info@sample.co.jp" autocomplete="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="「ご連絡先メールアドレス」が正しく入力されていません。" required aria-required="true" data-error-message="「ご連絡先メールアドレス」が未入力です。" value="<?php echo Utils::get_escape_el($data, "email"); ?>">
                 <p class="form-error"><?php if (!empty($errors['email'])) echo $errors['email']; ?></p>
               </dd>
             </dl>
@@ -78,7 +78,7 @@ Utils::get_component('header');
                 <label for="tel">ご連絡先電話番号</label>
               </dt>
               <dd>
-                <input id="tel" type="tel" name="tel" placeholder="例）000-1234-5678" value="<?php echo Utils::get_escape_el($data, "tel"); ?>">
+                <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="例）000-1234-5678" pattern="[0-9-]+" title="「ご連絡先電話番号」は数字とハイフンのみで入力してください。" value="<?php echo Utils::get_escape_el($data, "tel"); ?>">
                 <p class="form-error"><?php if (!empty($errors['tel'])) echo $errors['tel']; ?></p>
               </dd>
             </dl>
@@ -90,7 +90,7 @@ Utils::get_component('header');
                 <strong>*</strong>
               </dt>
               <dd>
-                <textarea id="message" name="message" placeholder="テキストを入力ください" required aria-required="true"><?php echo Utils::get_escape_el($data, "message"); ?></textarea>
+                <textarea id="message" name="message" placeholder="テキストを入力ください" required aria-required="true" data-error-message="「お問い合わせ詳細」が未入力です。"><?php echo Utils::get_escape_el($data, "message"); ?></textarea>
                 <p class="form-error"><?php if (!empty($errors['message'])) echo $errors['message']; ?></p>
               </dd>
             </dl>
@@ -99,7 +99,7 @@ Utils::get_component('header');
 
         <div class="agreement">
           <label class="checkbox">
-            <input type="checkbox" name="agreement" value="1" required autocomplete="off" class="visually-hidden" <?php echo Utils::get_escape_el($data, "agreement") ? 'checked' : ''; ?>>
+            <input type="checkbox" data-trigger="agreement" name="agreement" value="1" required autocomplete="off" class="visually-hidden" <?php echo Utils::get_escape_el($data, "agreement") ? 'checked' : ''; ?>>
             <span class="icon"></span>
             <span class="text">「<a href="/privacy-policy" target="_blank">個人情報の取扱いに関する同意書</a>」<br class="sp">を読み、同意しました。</span>
           </label>
@@ -107,7 +107,7 @@ Utils::get_component('header');
         </div>
 
         <div class="button-wrapper">
-          <button class="module-secondary-button" name="action" value="confirm">確認画面へすすむ</button>
+          <button class="module-secondary-button" data-target="agreement" name="action" value="confirm" aria-disabled="true">確認画面へすすむ</button>
         </div>
       </form>
     </div>

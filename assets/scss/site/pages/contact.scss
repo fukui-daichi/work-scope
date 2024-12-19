@@ -122,12 +122,6 @@
               }
             }
           }
-
-          .button-wrapper {
-            [value="back"] {
-              --bg-color: #000;
-            }
-          }
         }
       }
     }
@@ -161,6 +155,10 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 2.4rem;
+
+      [value="back"] {
+        --bg-color: #000;
+      }
     }
   }
 }

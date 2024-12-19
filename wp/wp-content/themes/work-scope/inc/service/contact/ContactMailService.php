@@ -2,8 +2,6 @@
 
 namespace WorkScope\Inc\Service\Contact;
 
-use WorkScope\Inc\Utils;
-
 class ContactMailService
 {
   /**
