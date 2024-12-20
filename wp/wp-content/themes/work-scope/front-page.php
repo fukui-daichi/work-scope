@@ -26,14 +26,14 @@ Utils::get_component('header');
           <ul class="splide__list">
             <li class="splide__slide">
               <picture>
-                <!-- <source srcset="/assets/images/front/mv/sp/slide01.jpg" media="(max-width: 768px)" /> -->
-                <img src="/assets/images/front/mv/slide01.jpg" alt="" width="1080" height="720" decoding="async">
+                <source srcset="/assets/images/front/mv/sp/slide01.jpg" media="(max-width: 768px)" width="720" height="720" />
+                <img src="/assets/images/front/mv/slide01.jpg" alt="" width="1920" height="960" decoding="async">
               </picture>
             </li>
             <li class="splide__slide">
               <picture>
-                <!-- <source srcset="/assets/images/front/mv/sp/slide01.jpg" media="(max-width: 768px)" /> -->
-                <img src="/assets/images/front/mv/slide02.jpg" alt="" width="1920" height="1080" decoding="async">
+                <source srcset="/assets/images/front/mv/sp/slide02.jpg" media="(max-width: 768px)" width="720" height="720" />
+                <img src="/assets/images/front/mv/slide02.jpg" alt="" width="1920" height="960" decoding="async">
               </picture>
             </li>
           </ul>
@@ -62,7 +62,10 @@ Utils::get_component('header');
         </a>
       </div>
       <figure>
-        <img src="/assets/images/front/company/img01.jpg" alt="" width="1080" height="1620" decoding="async">
+        <picture>
+          <source srcset="/assets/images/front/company/sp/img01.jpg" media="(max-width: 768px)" width="640" height="480" />
+          <img src="/assets/images/front/company/img01.jpg" alt="" width="480" height="576" decoding="async">
+        </picture>
       </figure>
     </div>
   </section>
@@ -84,7 +87,10 @@ Utils::get_component('header');
       <ul class="service-list">
         <li>
           <figure>
-            <img src="/assets/images/front/service/img01.jpg" alt="" width="1080" height="1620" decoding="async">
+            <picture>
+              <source srcset="/assets/images/front/service/sp/img01.jpg" media="(max-width: 768px)" width="640" height="426" />
+              <img src="/assets/images/front/service/img01.jpg" alt="" width="374" height="248" decoding="async">
+            </picture>
           </figure>
           <dl>
             <dt>
@@ -96,7 +102,10 @@ Utils::get_component('header');
         </li>
         <li>
           <figure>
-            <img src="/assets/images/front/service/img02.jpg" alt="" width="1080" height="608" decoding="async">
+            <picture>
+              <source srcset="/assets/images/front/service/sp/img02.jpg" media="(max-width: 768px)" width="640" height="426" />
+              <img src="/assets/images/front/service/img02.jpg" alt="" width="374" height="248" decoding="async">
+            </picture>
           </figure>
           <dl>
             <dt>
@@ -108,7 +117,10 @@ Utils::get_component('header');
         </li>
         <li>
           <figure>
-            <img src="/assets/images/front/service/img03.jpg" alt="" width="1080" height="720" decoding="async">
+            <picture>
+              <source srcset="/assets/images/front/service/sp/img03.jpg" media="(max-width: 768px)" width="640" height="426" />
+              <img src="/assets/images/front/service/img03.jpg" alt="" width="374" height="248" decoding="async">
+            </picture>
           </figure>
           <dl>
             <dt>
@@ -129,7 +141,10 @@ Utils::get_component('header');
   <div class="module-image-block right">
     <div class="inner">
       <figure>
-        <img src="/assets/images/front/image-block/img01.jpg" alt="" width="1080" height="720" decoding="async" data-gsap-scroll="fadeIn" data-gsap-duration="1.2" data-gsap-delay="0.2">
+        <picture>
+          <source srcset="/assets/images/front/image-block/sp/img01.jpg" media="(max-width: 768px)" width="722" height="552" />
+          <img src="/assets/images/front/image-block/img01.jpg" alt="" width="1805" height="650" decoding="async" data-gsap-scroll="fadeIn" data-gsap-duration="1.2" data-gsap-delay="0.2">
+        </picture>
         <div class="reveal-mask" data-gsap-scroll="moveToRight" data-gsap-duration="1"></div>
       </figure>
     </div>
