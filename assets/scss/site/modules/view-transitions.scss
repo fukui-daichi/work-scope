@@ -1,0 +1,14 @@
+@use "../../base/shortcut-functions" as f;
+
+/* 遷移元ページのアニメーション */
+::view-transition-old(article) {
+  animation: 0.25s linear both shrink;
+}
+
+/* 遷移後ページのアニメーション */
+::view-transition-new(article) {
+  animation: 0.25s 0.25s linear both grow;
+}
+
+@include f.mq(sp) {
+}
