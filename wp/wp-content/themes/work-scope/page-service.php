@@ -67,7 +67,10 @@ Utils::get_component('header');
             </dd>
           </dl>
           <figure>
-            <img src="/assets/images/service/our-service/img01.jpg" alt="" width="1080" height="1620" decoding="async">
+            <picture>
+              <source srcset="/assets/images/service/our-service/sp/img01.jpg" media="(max-width: 768px)" width="640" height="384" />
+              <img src="/assets/images/service/our-service/img01.jpg" alt="" width="342" height="342" decoding="async">
+            </picture>
           </figure>
         </li>
         <li>
@@ -90,7 +93,10 @@ Utils::get_component('header');
             </dd>
           </dl>
           <figure>
-            <img src="/assets/images/service/our-service/img02.jpg" alt="" width="1080" height="720" decoding="async">
+            <picture>
+              <source srcset="/assets/images/service/our-service/sp/img02.jpg" media="(max-width: 768px)" width="640" height="384" />
+              <img src="/assets/images/service/our-service/img02.jpg" alt="" width="342" height="342" decoding="async">
+            </picture>
           </figure>
         </li>
         <li>
@@ -113,7 +119,10 @@ Utils::get_component('header');
             </dd>
           </dl>
           <figure>
-            <img src="/assets/images/service/our-service/img03.jpg" alt="" width="1080" height="720" decoding="async">
+            <picture>
+              <source srcset="/assets/images/service/our-service/sp/img03.jpg" media="(max-width: 768px)" width="640" height="384" />
+              <img src="/assets/images/service/our-service/img03.jpg" alt="" width="342" height="342" decoding="async">
+            </picture>
           </figure>
         </li>
       </ul>
