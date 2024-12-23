@@ -8,7 +8,7 @@
             "name": "thumbnail",
             "aria-label": "",
             "type": "image",
-            "instructions": "推奨画像比率 1200px × 800px",
+            "instructions": "推奨画像比率 1200px × 630px",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -109,7 +109,7 @@
                                 "none": "なし",
                                 "top": "上",
                                 "bottom": "下",
-                                "block": "上下"
+                                "block：上下": "block：上下"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -190,7 +190,7 @@
                                 "none": "なし",
                                 "top": "上",
                                 "bottom": "下",
-                                "block": "上下"
+                                "block：上下": "block：上下"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -274,7 +274,7 @@
                                 "none": "なし",
                                 "top": "上",
                                 "bottom": "下",
-                                "block": "上下"
+                                "block：上下": "block：上下"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -358,7 +358,7 @@
                                 "none": "なし",
                                 "top": "上",
                                 "bottom": "下",
-                                "block": "上下"
+                                "block：上下": "block：上下"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -397,5 +397,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733903378
+    "modified": 1734968595
 }
