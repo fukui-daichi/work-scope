@@ -2263,10 +2263,10 @@ section > .inner {
     flex-direction: column;
     gap: 8rem;
   }
-  body .site-header > .inner .global-nav .navlist li > a:not([class]) {
+  body .site-header > .inner .global-nav .navlist li > a:not(.logo) {
     font-size: 3.2rem;
   }
-  body .site-header > .inner .global-nav .navlist li > a:not([class]).logo {
+  body .site-header > .inner .global-nav .navlist li > a:not(.logo).logo {
     width: 32rem;
   }
   body .site-header > .inner .global-nav .navlist li.buttons {

@@ -135,7 +135,7 @@
             gap: 8rem;
 
             li {
-              > a:not([class]) {
+              > a:not(.logo) {
                 font-size: 3.2rem;
 
                 &.logo {

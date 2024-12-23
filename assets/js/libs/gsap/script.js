@@ -67,9 +67,9 @@ const initScrollAnimations = () => {
           ...config,
           scrollTrigger: {
             trigger: element,
-            start: "center bottom",
+            start: "top 80%",
             once: true,
-            // markers: true,
+            markers: true,
           },
         }
       );
