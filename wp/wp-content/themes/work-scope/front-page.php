@@ -19,7 +19,7 @@ Utils::get_component('header');
           働く人の可能性を、<br>
           最大限に。
         </h1>
-        <p lang="en" translate="no">MAXIMIZING HUMAN POTENTIAL AT WORK.</p>
+        <p lang="en" translate="no">UNLEASHING YOUR BRILLIANCE AT WORK.</p>
       </hgroup>
       <div class="splide" role="group">
         <div class="splide__track">
