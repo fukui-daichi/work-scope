@@ -9,7 +9,10 @@
     <div class="module-image-block">
       <div class="inner">
         <figure>
-          <img src="/assets/images/<?= $page_path ?? 'common'; ?>/image-block/img01.jpg" alt="" width="1080" height="720" decoding="async">
+          <picture>
+            <source srcset="/assets/images/<?= $page_path ?? 'common'; ?>/image-block/sp/img01.jpg" media="(max-width: 768px)" width="722" height="552" />
+            <img src="/assets/images/<?= $page_path ?? 'common'; ?>/image-block/img01.jpg" alt="" width="1805" height="650" decoding="async">
+          </picture>
         </figure>
       </div>
     </div>

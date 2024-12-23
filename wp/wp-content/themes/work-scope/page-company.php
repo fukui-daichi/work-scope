@@ -43,7 +43,10 @@ Utils::get_component('header');
         </dl>
       </div>
       <figure>
-        <img src="/assets/images/company/message/img01.jpg" alt="" width="1080" height="1620" decoding="async">
+        <picture>
+          <source srcset="/assets/images/company/message/sp/img01.jpg" media="(max-width: 768px)" width="640" height="512" />
+          <img src="/assets/images/company/message/img01.jpg" alt="" width="400" height="600" decoding="async">
+        </picture>
       </figure>
     </div>
   </section>
@@ -105,7 +108,10 @@ Utils::get_component('header');
   <div class="module-image-block right">
     <div class="inner">
       <figure>
-        <img src="/assets/images/company/image-block/img02.jpg" alt="" width="1080" height="608" decoding="async" data-gsap-scroll="fadeIn" data-gsap-duration="1.2" data-gsap-delay="0.2">
+        <picture>
+          <source srcset="/assets/images/company/image-block/sp/img02.jpg" media="(max-width: 768px)" width="722" height="552" />
+          <img src="/assets/images/company/image-block/img02.jpg" alt="" width="1805" height="650" decoding="async" data-gsap-scroll="fadeIn" data-gsap-duration="1.2" data-gsap-delay="0.2">
+        </picture>
         <div class="reveal-mask" data-gsap-scroll="moveToRight" data-gsap-duration="1"></div>
       </figure>
     </div>
