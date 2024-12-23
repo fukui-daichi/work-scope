@@ -69,7 +69,7 @@ const initScrollAnimations = () => {
             trigger: element,
             start: "top 80%",
             once: true,
-            markers: true,
+            // markers: true,
           },
         }
       );
