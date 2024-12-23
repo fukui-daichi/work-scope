@@ -5,6 +5,10 @@
   section {
     &.single-case {
       > .inner {
+        article {
+          view-transition-name: article;
+        }
+
         .module-primary-button {
           margin-top: 4rem;
           margin-inline: auto;

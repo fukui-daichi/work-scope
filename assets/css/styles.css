@@ -2152,6 +2152,9 @@ section > .inner {
   transform: translateY(0);
 }
 
+.single-case-page section.single-case > .inner article {
+  view-transition-name: article;
+}
 .single-case-page section.single-case > .inner .module-primary-button {
   margin-top: 4rem;
   margin-inline: auto;

@@ -17,7 +17,7 @@ Utils::get_component('header');
 <main class="archive-case-page" data-hx-target>
   <?php Utils::get_component('lower-header', $page_config); ?>
 
-  <section class="archive-case">
+  <section id="hx-show" class="archive-case">
     <div class="inner">
       <ul class="module-category-list">
         <li>
@@ -25,7 +25,7 @@ Utils::get_component('header');
             href="/case"
             class="<?php echo !$has_param_category ? 'current' : ''; ?>"
             hx-get="/case"
-            hx-swap="outerHTML transition:true"
+            hx-swap="outerHTML transition:true show:#hx-show:top"
             hx-push-url="true"
             hx-target="[data-hx-target]"
             hx-select="[data-hx-target]">すべての記事</a>
@@ -36,7 +36,7 @@ Utils::get_component('header');
               href="/case?category=<?php echo $category['slug']; ?>"
               class="<?php echo $category['is_current'] ? 'current' : ''; ?>"
               hx-get="/case?category=<?php echo $category['slug']; ?>"
-              hx-swap="outerHTML transition:true"
+              hx-swap="outerHTML transition:true show:#hx-show:top"
               hx-push-url="true"
               hx-target="[data-hx-target]"
               hx-select="[data-hx-target]">

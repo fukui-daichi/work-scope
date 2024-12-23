@@ -1,14 +1,12 @@
-import Splide from "../../libs/splide/esm/splide.esm.js";
-import { gsap } from "../../libs/gsap/esm/index.js";
-import { isCurrentPage, isMobile } from "../../utils/script.js";
+import { isCurrentPage, setupTransitionOnClick } from "../../utils/script.js";
 
 export default () => {
   if (isCurrentPage("/case")) {
+    // setupTransitionOnClick();
   }
 
-  if (isCurrentPage("/case")) {
-    document.addEventListener("htmx:afterSwap", (e) => {
-      // handleAfterSwap(e);
-    });
-  }
+  document.addEventListener("htmx:afterSwap", (e) => {
+    if (isCurrentPage("/case")) {
+    }
+  });
 };

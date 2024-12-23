@@ -15,3 +15,25 @@ export const isCurrentPage = (pageName = "/") => {
  * @returns {boolean} ビューポートの幅が1200px以下の場合はtrue、そうでない場合はfalse。
  */
 export const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
+/**
+ * 要素のクリック時にView Transition効果を設定します
+ * @param {string} selector - クリック対象のセレクタ
+ * @param {string} transitionName - 設定するview-transition-name
+ * @example
+ * setupTransitionOnClick('.link', 'slide')
+ */
+export const setupTransitionOnClick = (selector, transitionName) => {
+  if (!selector || !transitionName) {
+    throw new Error("selector and transitionName are required");
+  }
+
+  document.querySelectorAll(selector).forEach((element) => {
+    element.addEventListener("click", () => {
+      document.querySelectorAll('[style*="view-transition-name"]').forEach((el) => {
+        el.style.viewTransitionName = "";
+      });
+      element.style.viewTransitionName = transitionName;
+    });
+  });
+};
