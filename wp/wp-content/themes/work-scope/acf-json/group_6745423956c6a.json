@@ -109,7 +109,7 @@
                                 "none": "なし",
                                 "top": "上",
                                 "bottom": "下",
-                                "block": "block"
+                                "block": "上下"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -190,7 +190,7 @@
                                 "none": "なし",
                                 "top": "上",
                                 "bottom": "下",
-                                "block": "block"
+                                "block": "上下"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -274,7 +274,7 @@
                                 "none": "なし",
                                 "top": "上",
                                 "bottom": "下",
-                                "block": "block"
+                                "block": "上下"
                             },
                             "default_value": false,
                             "return_format": "value",
@@ -358,7 +358,7 @@
                                 "none": "なし",
                                 "top": "上",
                                 "bottom": "下",
-                                "block": "block"
+                                "block": "上下"
                             },
                             "default_value": false,
                             "return_format": "value",
