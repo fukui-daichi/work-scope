@@ -150,7 +150,7 @@ Utils::get_component('header');
     </div>
   </div>
 
-  <section class="case">
+  <section id="" class="case">
     <div class="inner" data-gsap-scroll="fadeIn">
       <div class="intro">
         <h2 class="module-text-h2">CASE</h2>
@@ -165,13 +165,13 @@ Utils::get_component('header');
         </dl>
       </div>
       <?php if (!empty($case_list)) { ?>
-        <ul class="module-card-list">
+        <ul id="case-list" class="module-card-list">
           <?php foreach ($case_list as $item) { ?>
             <li>
               <a
                 href="<?php echo $item['permalink']; ?>"
                 hx-get="<?php echo $item['permalink']; ?>"
-                hx-swap="outerHTML transition:true show:window:top"
+                hx-swap="outerHTML transition:true show:#hx-show:top"
                 hx-push-url="true"
                 hx-target="[data-hx-target]"
                 hx-select="[data-hx-target]">

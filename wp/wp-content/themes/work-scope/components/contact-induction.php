@@ -6,7 +6,7 @@
           <dt>お問い合わせ</dt>
           <dd>サービスに関するご質問や、取材・パートナーシップのご相談などはこちらからお気軽にご連絡ください。</dd>
         </dl>
-        <a href="/contact" class="module-primary-button">
+        <a href="/contact" class="module-primary-button" hx-get="/contact" hx-swap="outerHTML transition:true show:window:top" hx-push-url="true" hx-target="[data-hx-target]" hx-select="[data-hx-target]">
           <span class="icon"></span>
           <span class="text">お問い合わせはこちら</span>
         </a>

@@ -1,6 +1,6 @@
 import Splide from "../../libs/splide/esm/splide.esm.js";
 import { gsap } from "../../libs/gsap/esm/index.js";
-import { isCurrentPage, isMobile } from "../../utils/script.js";
+import { isCurrentPage, setupTransitionOnClick } from "../../utils/script.js";
 
 const initializeSplide = () => {
   const setupSplide = () => {
@@ -49,11 +49,13 @@ const initializeSplide = () => {
 export default () => {
   if (isCurrentPage()) {
     initializeSplide();
+    setupTransitionOnClick("#case-list a", "article");
   }
 
   document.addEventListener("htmx:afterSwap", () => {
     if (isCurrentPage()) {
       initializeSplide();
+      setupTransitionOnClick("#case-list a", "article");
     }
   });
 };

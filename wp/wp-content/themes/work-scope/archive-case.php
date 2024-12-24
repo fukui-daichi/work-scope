@@ -47,7 +47,7 @@ Utils::get_component('header');
       </ul>
 
       <?php if (!empty($case_list)) { ?>
-        <ul class="module-card-list" id="case-list">
+        <ul id="case-list" class="module-card-list">
           <?php
           Utils::get_component('case/card-list-items', [
             'case_list' => $case_list,

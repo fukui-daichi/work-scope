@@ -21,10 +21,6 @@
 html {
   @include f.rem-base-font-size;
   font-family: var(--font-noto-sans);
-
-  /* アニメーション時間を10倍に延長 */
-  // view-transition-name: root;
-  // view-transition-duration: 10s;
 }
 
 body {
