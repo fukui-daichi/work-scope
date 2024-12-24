@@ -20,7 +20,7 @@ $items_data = CaseViewService::prepare_card_list_data(
     <a
       href="<?php echo esc_url($item['case']['permalink']); ?>"
       hx-get="<?php echo esc_url($item['case']['permalink']); ?>"
-      hx-swap="outerHTML transition:true show:window:top"
+      hx-swap="outerHTML transition:true show:#hx-show:top"
       hx-push-url="true"
       hx-target="[data-hx-target]"
       hx-select="[data-hx-target]">

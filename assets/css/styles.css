@@ -734,30 +734,6 @@ th {
   top: 0;
 }
 
-/* 縮小しながらフェードアウト */
-@keyframes shrink {
-  to {
-    scale: 0.8;
-    opacity: 0.5;
-  }
-}
-/* 拡大しながらフェードイン */
-@keyframes grow {
-  from {
-    scale: 0.8;
-    opacity: 0.5;
-  }
-}
-/* 遷移元ページのアニメーション */
-::view-transition-old(article) {
-  animation: 0.25s linear both shrink;
-}
-
-/* 遷移後ページのアニメーション */
-::view-transition-new(article) {
-  animation: 0.25s 0.25s linear both grow;
-}
-
 button[aria-disabled=true] {
   filter: brightness(0.5);
   cursor: not-allowed;
@@ -1287,6 +1263,7 @@ textarea {
 html {
   font-size: 62.5%;
   font-family: var(--font-noto-sans);
+  /* アニメーション時間を10倍に延長 */
 }
 @media (max-width: 768px) {
   html {

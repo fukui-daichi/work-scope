@@ -13,7 +13,7 @@ Utils::get_component('header');
 <main class="single-case-page" data-hx-target>
   <section class="single-case">
     <div class="inner">
-      <article class="module-article-card">
+      <article id="hx-show" class="module-article-card">
         <hgroup>
           <p>
             <span class="category"><?php echo $case_data['category'] ?></span>

@@ -1,17 +1,1 @@
 @use "../../base/shortcut-functions" as f;
-
-/* 縮小しながらフェードアウト */
-@keyframes shrink {
-  to {
-    scale: 0.8;
-    opacity: 0.5;
-  }
-}
-
-/* 拡大しながらフェードイン */
-@keyframes grow {
-  from {
-    scale: 0.8;
-    opacity: 0.5;
-  }
-}
