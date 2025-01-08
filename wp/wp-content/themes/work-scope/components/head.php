@@ -34,6 +34,20 @@ $base_color = $site_options['base_color'];
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!--=============== ▼GOOGLE ANALYTICS ===============-->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7JH0YKZG2T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-7JH0YKZG2T');
+  </script>
+
   <script type="module" src="/assets/js/app.js?v=<?php echo filemtime(ABSPATH . "../assets/js/app.js"); ?>" defer></script>
 
   <?php wp_head(); ?>
